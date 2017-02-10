@@ -1,4 +1,4 @@
-::-webkit-scrollbar{width: 0}
+::-webkit-scrollbar{width: 0}/*hide scroll bar*/
 
 .headcontainer{/*header's background image*/
     width:100%;
@@ -24,7 +24,7 @@ ul li{
     padding: 10px;
 }
 
-.clearfix{
+.clearfix{/*fix flow problem*/
     overflow: auto;
 }
 
@@ -68,7 +68,7 @@ ul li{
     }
 }
 
-.textcenter{
+.textcenter{/*text align center*/
     text-align: center;
     font-family: Consolas;
 }
@@ -128,7 +128,7 @@ p{
     margin-bottom: 50px;
 }
 
-#footer{
+#footer{/*bottom of the page*/
     width: 100%;
     margin-bottom: 30px;
 }
@@ -148,6 +148,7 @@ p{
     border-radius: 20px;
     box-shadow: 0 1px 1px #999;
     transition: 0.2s;
+    background-color: white;
 }
 
 .cardframe:hover{
@@ -185,7 +186,7 @@ p{
 }
 
 @media(max-width: 767px){
-    .cardframe{
-        box-shadow: 0 5px 15px #999;
+    body{
+        background-color: #eee;
     }
 }

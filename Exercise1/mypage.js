@@ -14,6 +14,6 @@ function hidediv() {//hide wechat code
         document.body.style.overflow="auto";
 }
 
-function favpage(){
+function favpage(){//go to my favorite webpage
         window.open("http://ow.blizzard.cn");
 }
