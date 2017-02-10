@@ -30,19 +30,27 @@ ul li{
 
 .floatleft{
     float: left;
-    width: 35%;
-    margin-left: 10%;
+    width: 31%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 6%;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
 .floatright{
     float: right;
-    width: 35%;
-    margin-right: 10%;
+    width: 31%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 6%;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 767px) {
@@ -56,7 +64,7 @@ ul li{
     .floatright{
         float: none;
         width: 80%;
-        margin-left: 10%;
+        margin-left: 6%;
     }
 }
 
@@ -134,4 +142,50 @@ p{
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.cardframe{/*border of introduction and about*/
+    border-radius: 20px;
+    box-shadow: 0 1px 1px #999;
+    transition: 0.2s;
+}
+
+.cardframe:hover{
+    box-shadow: 0 5px 20px #999;
+}
+
+.favbutton{/*favourite page button*/
+    border-radius: 10px;
+    border: 1px solid blue;
+    color: blue;
+    background-color: white;
+    float: right;
+    width: 20%;
+    margin-right: 15%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+@media(max-width: 767px){
+    .favbutton{
+        color: white;
+        background-color: blue;
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+
+.favbutton:hover{
+    color: white;
+    background-color: blue;
+}
+
+@media(max-width: 767px){
+    .cardframe{
+        box-shadow: 0 5px 15px #999;
+    }
 }
