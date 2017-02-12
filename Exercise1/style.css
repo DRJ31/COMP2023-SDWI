@@ -166,8 +166,8 @@ p{
 
 .favbutton{/*favourite page button*/
     border-radius: 10px;
-    border: 1px solid blue;
-    color: blue;
+    border: 1px solid #2b3047;
+    color: #2b3047;
     background-color: white;
     float: right;
     width: 20%;
@@ -182,7 +182,7 @@ p{
 @media(max-width: 767px){
     .favbutton{
         color: white;
-        background-color: blue;
+        background-color: #2b3047;
         float: none;
         width: 60%;
         margin-left: 20%;
@@ -191,9 +191,39 @@ p{
 
 .favbutton:hover{
     color: white;
-    background-color: blue;
+    background-color: #2b3047;
 }
 
+.favbutton1{/*favourite page button*/
+    border-radius: 10px;
+    border: 1px solid #de698c;
+    color: #de698c;
+    background-color: white;
+    float: right;
+    width: 20%;
+    margin-right: 15%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s;
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media(max-width: 767px){
+    .favbutton1{
+        color: white;
+        background-color: #de698c;
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+
+.favbutton1:hover{
+    color: white;
+    background-color: #de698c;
+}
 @media(max-width: 767px){
     body{
         background-color: #eee;
