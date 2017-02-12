@@ -127,12 +127,21 @@ p{
     margin-left: 5%;
     margin-bottom: 50px;
 }
-
+#tablecontent table{
+    border: 1px #ddd solid;
+}
+#tablecontent th{
+    background-color: #eee;
+}
 #footer{/*bottom of the page*/
     width: 100%;
     margin-bottom: 30px;
 }
-
+@media(max-width: 767px){
+    #tablecontent td{
+        background-color: white;
+    }
+}
 .img2{/*wechat code style*/
     position: absolute;
     margin: auto;
