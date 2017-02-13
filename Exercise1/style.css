@@ -126,6 +126,7 @@ p{
     width: 90%;
     margin-left: 5%;
     margin-bottom: 50px;
+    overflow-x: scroll;
 }
 #tablecontent table{
     border: 1px #ddd solid;
