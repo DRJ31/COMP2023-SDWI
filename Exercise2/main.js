@@ -39,8 +39,9 @@ function information() {
             content=content+arr[i]+" and ";
         }
     }
+    var mail=document.getElementById("email").value;
     alert(
-        sexresult+" name is: "+name+". "+sexresult+" skill is: "+content+" "+sex1+" chose to work in "+cityresult+". "+sexresult+" wanted position is "+position+". "+sexresult+" recent job is "+recentjob+". The following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
+        sexresult+" name is: "+name+". "+sexresult+" Email is "+mail+". "+sexresult+" skill is: "+content+" "+sex1+" chose to work in "+cityresult+". "+sexresult+" wanted position is "+position+". "+sexresult+" recent job is "+recentjob+". The following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
     );
 }
 
@@ -49,10 +50,9 @@ function formreset() {
 }
 
 function checkmail(){
-    var mail=document.getElementById("email").value;
     var at=mail.indexOf("@");
     var point=mail.lastIndexOf(".");
-    console.log(at);
-    console.log(point);
-
+    if(at<=0 || mail.length-point<2){
+        alert("Email format error");
+    }
 }
