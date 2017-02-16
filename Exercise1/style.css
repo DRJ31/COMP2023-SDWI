@@ -211,6 +211,31 @@ p{
     margin-top: 30px;
 }
 
+.joinbutton{
+    color: deepskyblue;
+    width:60%;
+    margin-left: 20%;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+    .joinbutton{
+        color: white;
+        background-color: deepskyblue;
+    }
+}
+.joinbutton:hover{
+    color: white;
+    background-color: deepskyblue;
+}
 @media(max-width: 767px){
     .favbutton1{
         color: white;

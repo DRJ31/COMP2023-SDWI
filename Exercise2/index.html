@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+    <script src="main.js"></script>
+</head>
+<body>
+   <div class="maincontainer">
+       <form action="" id="mainform">
+           Username: <input type="text" name="username" id="username"/><br/>
+           Email: <input type="text" name="email" id="email"/><br/>
+           Your gender: <br/>
+           <input type="radio" name="gender" value="His">Male <br/>
+           <input type="radio" name="gender" value="Her">Female <br/>
+           Your Current Skill <br/>
+           <input type="checkbox" name="skill" value="Web Design"/>Web Design <br/>
+           <input type="checkbox" name="skill" value="Java"/>Java <br/>
+           <input type="checkbox" name="skill" value="Database"/>Database <br/>
+           City Expected <br/>
+           <input type="radio" name="city" value="Beijing"/>Beijing <br/>
+           <input type="radio" name="city" value="Shenzhen"/>Shenzhen <br/>
+           <input type="radio" name="city" value="Zhuhai"/>Zhuhai <br/>
+           Position
+           <select name="position" id="position">
+                <option value="Officer">Officer</option>
+                <option value="Manager">Manager</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Architect">Architect</option>
+           </select>
+           <br/>
+           Recent Jobs: <br/>
+           <select name="recent" id="recent" multiple="multiple">
+               <option value="Assistant">Assistant</option>
+               <option value="Software Engineer">Software Engineer</option>
+               <option value="Customer Service">Customer Service</option>
+               <option value="Manager">Manager</option>
+               <option value="CEO">CEO</option>
+           </select><br/>
+           Working Experience: <br/>
+           <textarea name="experience" id="experience" cols="30" rows="10"></textarea><br/>
+           Upload a file <input type="file"><br/>
+           <input type="button" onclick="checkmail()" value="Generate information">
+           <input type="button" onclick="formreset()" value="reset">
+           <input type="submit">
+       </form>
+   </div>
+</body>
+</html>
