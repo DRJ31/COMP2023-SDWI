@@ -106,3 +106,59 @@ input[type="submit"]:hover{
 }
 
 ::-webkit-scrollbar{width: 0}
+
+.cardframe{
+    width: 50%;
+    margin-left: 20%;
+    box-shadow: 0px 5px 20px #ccc;
+    background-color: white;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.headphoto{
+    width: 100%;
+    height: 300px;
+    background: url("http://cdn.uiccst.com/17-2-16/76139257-file_1487257680177_d30d.jpg") center;
+}
+
+.firstcard{
+    text-align: center;
+    margin-top: -50px;
+}
+
+.imgframe{
+    height: 200px;
+    border-radius: 50%;
+    margin-top: -180px;
+    width: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("img.jpg") center;
+}
+
+.cardframe ul li{
+    list-style: upper-roman;
+    font-family: "helvetica";
+    padding: 10px;
+}
+
+.cardframe p{
+    line-height: 20px;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+@media (max-width: 767px) {
+    .cardframe{
+        width: 80%;
+        margin-left: 5%;
+    }
+}

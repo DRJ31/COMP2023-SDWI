@@ -13,7 +13,7 @@
 </div>
 <!--main part-->
    <div class="maincontainer">
-       <form action="" id="mainform">
+       <form action="info.php" id="mainform" method="post" onsubmit="checkmail()">
            <!--username-->
            Username: <br/><br/><input type="text" name="username" id="username"/><br/><br/><br/>
            <!--email-->
@@ -28,9 +28,9 @@
            <!--skills-->
            <fieldset>
            <legend>Your Current Skills</legend>
-           <input type="checkbox" name="skill" value="Web Design"/>Web Design <br/>
-           <input type="checkbox" name="skill" value="Java"/>Java <br/>
-           <input type="checkbox" name="skill" value="Database"/>Database <br/>
+           <input type="checkbox" name="skill[]" value="Web Design"/>Web Design <br/>
+           <input type="checkbox" name="skill[]" value="Java"/>Java <br/>
+           <input type="checkbox" name="skill[]" value="Database"/>Database <br/>
            </fieldset>
            <br/><br/>
            <!--city-->
@@ -65,7 +65,7 @@
            <!--upload file-->
            Upload a file <br/><br/><input type="file"><br/><br/><br/>
            <!--submit button-->
-           <input type="button" onclick="information()" value="Submit" class="greenbtn">
+           <input type="button" onclick="checkmail()" value="Submit" class="greenbtn">
            <!--reset button-->
            <input type="button" onclick="formreset()" value="reset" class="redbtn">
            <!--view php-->

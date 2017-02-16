@@ -1,6 +1,6 @@
 function information() {
     var name=document.getElementById("username").value;//value of username
-    var skills=document.getElementById("mainform").skill;//array of skill
+    var skills=document.getElementsByName("skill[]");//array of skill
     var sex=document.getElementById("mainform").gender;//array of gender
     var city=document.getElementById("mainform").city;//array of city
     var position=document.getElementById("position").value;//value of position
@@ -56,9 +56,13 @@ function formreset() {//reset form function
 }
 
 function checkmail(){//check if the email address have a correct format
+    var mail=document.getElementById("email").value;
     var at=mail.indexOf("@");
     var point=mail.lastIndexOf(".");
     if(at<=0 || mail.length-point<2){
         alert("Email format error");
+    }
+    else{
+        information();
     }
 }
