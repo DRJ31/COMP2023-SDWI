@@ -5,7 +5,7 @@ $gender=$_POST["gender"];
 $skills=$_POST["skill"];
 $city=$_POST["city"];
 $position=$_POST["position"];
-$recent=$_POST["recent"];
+$recent=$_POST["array1"];
 $experience=$_POST["experience"];
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,14 @@ $experience=$_POST["experience"];
 </div>
 <div class="cardframe">
     <h2>Recent Jobs</h2>
-    <p><?php echo $recent;?></p>
+    <ul><?php
+        $arr=explode(',',$recent);
+        $content="";
+        for($i=0;$i<count($arr);$i++){
+            $content=$content."<li>".$arr[$i]."</li>";
+        }
+        echo $content;
+        ?></ul>
 </div>
 <div class="cardframe">
     <h2>Skills</h2>

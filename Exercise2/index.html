@@ -13,7 +13,8 @@
 </div>
 <!--main part-->
    <div class="maincontainer">
-       <form action="info.php" id="mainform" method="post">
+       <form action="info.php" id="mainform" method="post" onsubmit="submitphp()">
+           <input type="text" id="array" name="array1" style="display: none">
            <!--username-->
            Username: <br/><br/><input type="text" name="username" id="username" onfocusout="normalout('username')" onfocus="focuson('username')"/><br/><br/><br/>
            <!--email-->
@@ -53,11 +54,11 @@
            <!--recent jobs-->
            Recent Jobs: <br/><br/>
            <select name="recent" id="recent" multiple="multiple">
-               <option value="Assistant">Assistant</option>
-               <option value="Software Engineer">Software Engineer</option>
-               <option value="Customer Service">Customer Service</option>
-               <option value="Manager">Manager</option>
-               <option value="CEO">CEO</option>
+               <option name="option" value="Assistant">Assistant</option>
+               <option name="option" value="Software Engineer">Software Engineer</option>
+               <option name="option" value="Customer Service">Customer Service</option>
+               <option name="option" value="Manager">Manager</option>
+               <option name="option" value="CEO">CEO</option>
            </select><br/><br/><br/>
            <!--working experience-->
            Working Experience: <br/><br/>

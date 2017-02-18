@@ -4,10 +4,18 @@ function information() {
     var sex=document.getElementById("mainform").gender;//array of gender
     var city=document.getElementById("mainform").city;//array of city
     var position=document.getElementById("position").value;//value of position
-    var recentjob=document.getElementById("recent").value;//value of recent job
+    var recentjob=document.getElementById("recent");//value of recent job
     var workexperience=document.getElementById("experience").value;//value of experience
     var arr=new Array();
     var j=0;//use in array arr
+    var k=0;//use in array arr1
+    var arr1=[];
+    for(var i=0;i<5;i++){
+        if(recentjob[i].selected){
+            arr1.push(recentjob[i].value);
+            k++;
+        }
+    }
     //set up a new array on which skills users have chosen
     for(var i=0;i<skills.length;i++){
         if(skills[i].checked){
@@ -44,6 +52,15 @@ function information() {
             content=content+arr[i]+" and ";
         }
     }
+    var content1="";
+    for(var i=0;i<arr1.length;i++){
+        if(i==arr1.length-1){
+            content1=content1+arr1[i]+".";
+        }
+        else{
+            content1=content1+arr1[i]+" and ";
+        }
+    }
     var mail=document.getElementById("email").value;//users' email address
     //alert begin
     alert(
@@ -51,7 +68,7 @@ function information() {
         sexresult+" Email is "+mail+". "+"\n"+
         sexresult+" skill is: "+content+"\n"+
         sex1+" chose to work in "+cityresult+". "+"\n"+
-        sexresult+" wanted position is "+position+". \n"+sexresult+" recent job is "+recentjob+". \nThe following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
+        sexresult+" wanted position is "+position+". \n"+sexresult+" recent job is "+content1+". \nThe following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
     );//alert end
 }//function information() end
 
@@ -84,6 +101,19 @@ function checkmail(){//check if the email address have a correct format
     }
 }
 
+
+function submitphp(){
+    var recentjob=document.getElementById("recent");//value of recent job
+    var k=0;//use in array arr1
+    var arr1=[];
+    for(var i=0;i<5;i++){
+        if(recentjob[i].selected){
+            arr1[k]=recentjob[i].value;
+            k++;
+        }
+    }
+    document.getElementById("array").value=arr1;
+}
 function normalout(name) {//text focus out function
     var element=document.getElementById(name);
     if(element.value.length>0) {
@@ -130,6 +160,8 @@ function checkall(){
     var city=document.getElementById("mainform").city;//array of city
     var sex=document.getElementById("mainform").gender;
     var skills=document.getElementsByName("skill[]");//array of skill
+    var sexresult="";
+    var cityresult="";
     var arr=new Array();
     var j=0;
     for(var i=0;i<skills.length;i++) {
@@ -139,20 +171,14 @@ function checkall(){
         }
     }
 //find out which city users have chosen
-    for(var i=0;i<city.length;i++){
-        if(city[i].checked){
-            var cityresult=city[i].value;
-        }
-        else{
-            var cityresult="";
+    for(var i=0;i<city.length;i++) {
+        if (city[i].checked) {
+            var cityresult = city[i].value;
         }
     }
-    for(var i=0;i<sex.length;i++){
-        if(city[i].checked){
-            var sexresult=sex[i].value;
-        }
-        else{
-            var sexresult="";
+    for(var i=0;i<sex.length;i++) {
+        if (city[i].checked) {
+            var sexresult = sex[i].value;
         }
     }
     if(name.length==0 || experience.length==0 || mail.length==0 || recent==0 || cityresult.length==0 || sexresult.length==0 ||arr.length==0){
@@ -167,6 +193,6 @@ function checkall(){
 }
 
 function test(name) {
-    var value=document.getElementById(name).value.length;
+    var value=document.getElementById(name);
     console.log(value);
 }
