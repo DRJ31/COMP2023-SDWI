@@ -187,6 +187,7 @@ select:focus{
 @media(max-width: 767px){
     #recent{
         height: 30px;
+        padding:0;
     }
 }
 #file{
