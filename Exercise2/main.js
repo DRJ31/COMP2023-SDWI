@@ -9,7 +9,7 @@ function information() {
     var arr=new Array();
     var j=0;//use in array arr
     var k=0;//use in array arr1
-    var arr1=[];
+    var arr1=[];//array about recent job
     for(var i=0;i<5;i++){
         if(recentjob[i].selected){
             arr1.push(recentjob[i].value);
@@ -52,6 +52,7 @@ function information() {
             content=content+arr[i]+" and ";
         }
     }
+    //content of recent job
     var content1="";
     for(var i=0;i<arr1.length;i++){
         if(i==arr1.length-1){
@@ -102,7 +103,7 @@ function checkmail(){//check if the email address have a correct format
 }
 
 
-function submitphp(){
+function submitphp(){//array for php
     var recentjob=document.getElementById("recent");//value of recent job
     var k=0;//use in array arr1
     var arr1=[];
@@ -126,7 +127,7 @@ function normalout(name) {//text focus out function
     }
 }
 
-function focuson(name){
+function focuson(name){//onfocus function
     document.getElementById(name).style.border="2px solid #51a7e8";
     document.getElementById(name).style.backgroundColor="white";
 
@@ -192,7 +193,7 @@ function checkall(){
     }
 }
 
-function test(name) {
+function test(name) {//just for testing
     var value=document.getElementById(name);
     console.log(value);
 }
