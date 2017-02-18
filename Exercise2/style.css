@@ -187,8 +187,8 @@ select:focus{
 }
 
 #file{
-    width: 90%;
-    padding: 5%;
+    width: 98%;
+    padding: 1%;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
