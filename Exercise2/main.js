@@ -151,7 +151,7 @@ function mailout() {//mail foucus out function
     }
 }
 
-function checkall(){
+function checkall(){//check the whole form
     var name=document.getElementById("username").value;
     var mail=document.getElementById("email").value;
     var recent=document.getElementById("recent").value.length;
