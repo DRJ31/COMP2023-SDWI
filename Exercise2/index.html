@@ -13,11 +13,12 @@
 </div>
 <!--main part-->
    <div class="maincontainer">
-       <form action="info.php" id="mainform" method="post" onsubmit="checkmail()">
+       <form action="info.php" id="mainform" method="post" onsubmit="submitphp()">
+           <input type="text" id="array" name="array1" style="display: none">
            <!--username-->
-           Username: <br/><br/><input type="text" name="username" id="username"/><br/><br/><br/>
+           Username: <br/><br/><input type="text" name="username" id="username" onfocusout="normalout('username')" onfocus="focuson('username')"/><br/><br/><br/>
            <!--email-->
-           Email: <br/><br/><input type="text" name="email" id="email"/><br/><br/><br/>
+           Email: <br/><br/><input type="text" name="email" id="email" oninput="checkmail()" onfocusout="mailout()" onfocus="focuson('email')"/><br/><br/><br/>
            <!--gender-->
            <fieldset>
            <legend>Your gender:</legend>
@@ -53,21 +54,21 @@
            <!--recent jobs-->
            Recent Jobs: <br/><br/>
            <select name="recent" id="recent" multiple="multiple">
-               <option value="Assistant">Assistant</option>
-               <option value="Software Engineer">Software Engineer</option>
-               <option value="Customer Service">Customer Service</option>
-               <option value="Manager">Manager</option>
-               <option value="CEO">CEO</option>
+               <option name="option" value="Assistant">Assistant</option>
+               <option name="option" value="Software Engineer">Software Engineer</option>
+               <option name="option" value="Customer Service">Customer Service</option>
+               <option name="option" value="Manager">Manager</option>
+               <option name="option" value="CEO">CEO</option>
            </select><br/><br/><br/>
            <!--working experience-->
            Working Experience: <br/><br/>
-           <textarea name="experience" id="experience" class="textarea" rows="10"></textarea><br/><br/><br/>
+           <textarea name="experience" id="experience" class="textarea" rows="10" onfocusout="normalout('experience')" onfocus="focuson('experience')"></textarea><br/><br/><br/>
            <!--upload file-->
-           Upload a file <br/><br/><input type="file"><br/><br/><br/>
+           Upload a file <br/><br/><div id="file"><input type="file"></div><br/><br/><br/>
            <!--submit button-->
-           <input type="button" onclick="checkmail()" value="Submit" class="greenbtn">
+           <input type="button" onclick="checkall()" value="Submit" class="greenbtn">
            <!--reset button-->
-           <input type="button" onclick="formreset()" value="reset" class="redbtn">
+           <input type="button" onclick="formreset()" value="Reset" class="redbtn">
            <!--view php-->
            <input type="submit" value="Submit PHP">
            <!--back to main page-->
