@@ -63,6 +63,7 @@ input[type="button"]{
     color: white;
     border-radius: 5px;
     margin-bottom: 30px;
+    transition: 0.2s;
 }
 
 input[type="submit"]{
@@ -74,6 +75,7 @@ input[type="submit"]{
     border-radius: 5px;
     border: 1px solid #4d90fe;
     margin-bottom: 30px;
+    transition: 0.2s;
 }
 
 input[type="submit"]:hover{
@@ -148,12 +150,13 @@ input[type="submit"]:hover{
     list-style: upper-roman;
     font-family: "helvetica";
     padding: 10px;
+    font-size: 18px;
 }
 
 .cardframe p{
     line-height: 20px;
-    font-size: 16px;
-    font-family: monospace;
+    font-size: 18px;
+    font-family: Consolas;
 }
 
 @media (max-width: 767px) {
