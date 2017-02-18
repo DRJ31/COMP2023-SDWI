@@ -183,12 +183,15 @@ select:focus{
 #recent{
     height: 100px;
     padding: 9px;
-
 }
-
+@media(max-width: 767px){
+    #recent{
+        height: 30px;
+    }
+}
 #file{
-    width: 98%;
-    padding: 1%;
+    width: 96%;
+    padding: 2%;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
