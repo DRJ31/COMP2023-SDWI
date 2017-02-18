@@ -78,11 +78,11 @@ function formreset() {//reset form function
     var name=document.getElementById("username").style;
     var experience=document.getElementById("experience").style;
     document.getElementById("mainform").reset();
-    mail.border="2px solid #ddd";
+    mail.border="1px solid #ddd";
     mail.backgroundColor="#fafafa";
-    name.border="2px solid #ddd";
+    name.border="1px solid #ddd";
     name.backgroundColor="#fafafa";
-    experience.border="2px solid #ddd";
+    experience.border="1px solid #ddd";
     experience.backgroundColor="#fafafa";
 }
 
@@ -92,13 +92,13 @@ function checkmail(){//check if the email address have a correct format
     var point=mail.lastIndexOf(".");
     var element=document.getElementById("email").style;
     if(mail.length==0){
-        element.border="2px solid #51a7e8";
+        element.border="1px solid #51a7e8";
     }
     else if(at<=0 || mail.length-point<2 || point<=0 ||point-at<=1){
-        element.border="2px solid #df3e3e";
+        element.border="1px solid #df3e3e";
     }
     else{
-        element.border="2px solid #549d34";
+        element.border="1px solid #549d34";
     }
 }
 
@@ -118,17 +118,17 @@ function submitphp(){//array for php
 function normalout(name) {//text focus out function
     var element=document.getElementById(name);
     if(element.value.length>0) {
-        element.style.border = "2px solid #549d34";
+        element.style.border = "1px solid #549d34";
         element.style.backgroundColor = "white";
     }
     else{
-        element.style.border = "2px solid #ddd";
+        element.style.border = "1px solid #ddd";
         element.style.backgroundColor = "#fafafa";
     }
 }
 
 function focuson(name){//onfocus function
-    document.getElementById(name).style.border="2px solid #51a7e8";
+    document.getElementById(name).style.border="1px solid #51a7e8";
     document.getElementById(name).style.backgroundColor="white";
 
 }
@@ -138,15 +138,15 @@ function mailout() {//mail foucus out function
     var point=mail.lastIndexOf(".");
     var element=document.getElementById("email").style;
     if(mail.length==0){
-        element.border="2px solid #ddd";
+        element.border="1px solid #ddd";
         element.backgroundColor="#fafafa";
     }
     else if(at<=0 || mail.length-point<2 || point<=0 || point-at<=1){
-        element.border="2px solid #df3e3e";
+        element.border="1px solid #df3e3e";
         element.backgroundColor="white";
     }
     else{
-        element.border="2px solid #549d34";
+        element.border="1px solid #549d34";
         element.backgroundColor="white";
     }
 }
