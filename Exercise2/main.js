@@ -65,11 +65,11 @@ function information() {
     var mail=document.getElementById("email").value;//users' email address
     //alert begin
     alert(
-        sexresult+" name is: "+name+". "+"\n"+
-        sexresult+" Email is "+mail+". "+"\n"+
-        sexresult+" skill is: "+content+"\n"+
+        sexresult+" name is "+name+". "+"\n"+
+        sexresult+" Email is "+mail+"\n"+
+        sexresult+" skill is "+content+"\n"+
         sex1+" chose to work in "+cityresult+". "+"\n"+
-        sexresult+" wanted position is "+position+". \n"+sexresult+" recent job is "+content1+". \nThe following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
+        sexresult+" wanted position is "+position+". \n"+sexresult+" recent job is "+content1+"\nThe following message is "+sexresult.toLowerCase()+" working experience: "+workexperience
     );//alert end
 }//function information() end
 
@@ -182,6 +182,7 @@ function checkall(){
             var sexresult = sex[i].value;
         }
     }
+    //judge the form
     if(name.length==0 || experience.length==0 || mail.length==0 || recent==0 || cityresult.length==0 || sexresult.length==0 ||arr.length==0){
         alert("Please fill in all the blanks");
     }
