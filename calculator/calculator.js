@@ -14,28 +14,58 @@ function trinkle(){
         row.visibility="hidden";
     }
 }
-
-function mainnumber(num) {
+function findscreen(){
     for(var i=0;i<alldiv.length;i++){
         if(alldiv[i].id=="screen"){
-            var screen=alldiv[i];
+            var content1=alldiv[i];
         }
     }
-    if(number.length==0){
+    return content1;
+}
+function  judgesym() {
+    var content1=findscreen();
+    var txt=content1.innerHTML;
+    var long=txt.length;
+    var judge=long-txt.lastIndexOf("+")==1||long-txt.lastIndexOf("-")==1||long-txt.lastIndexOf("x")==1||long-txt.lastIndexOf("÷")==1;
+    return judge;
+}
+function mainnumber(num) {
+    var txt=findscreen();
+    if(number.length==j){
         number[j]=num;
     }
     else {
         number[j] += num;
     }
-
-    //console.log(number[j]);
+    if(txt.innerHTML.length==0){
+        txt.innerHTML=num;
+    }
+    else{
+        txt.innerHTML+=num;
+    }
 }
 
 function calculate(symbol){
-    for(var i=0;i<alldiv.length;i++){
-        if(alldiv[i].id=="screen"){
-            var screen=alldiv[i];
-        }
+    var txt=findscreen();
+    var judge=judgesym();
+    if(judge==false){
+        txt.innerHTML+=symbol;
+        j++;
     }
-    screen.innerHTML=number[j]+symbol;
+}
+
+function equal() {
+    var result=findscreen();
+    var result1=eval(result.innerHTML);
+    result.innerHTML=result1;
+    console.log(number);
+}
+function test() {
+    //console.log(eval(Math.);
+}
+function resetit() {
+    number=[];
+    j=0;
+    var content=findscreen();
+    content.innerHTML="";
 }

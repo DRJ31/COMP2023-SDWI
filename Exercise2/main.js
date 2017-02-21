@@ -8,12 +8,10 @@ function information() {
     var workexperience=document.getElementById("experience").value;//value of experience
     var arr=new Array();
     var j=0;//use in array arr
-    var k=0;//use in array arr1
     var arr1=[];//array about recent job
     for(var i=0;i<5;i++){
         if(recentjob[i].selected){
             arr1.push(recentjob[i].value);
-            k++;
         }
     }
     //set up a new array on which skills users have chosen
