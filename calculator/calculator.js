@@ -1,7 +1,9 @@
-var alldiv=document.getElementsByTagName("div");
-var number=[];
-var j=0;
-function trinkle(){
+var alldiv=document.getElementsByTagName("div");//get all div elements of the document
+var number=[];//array about your inputed number
+var j=0;//to count array number
+var sym=[];//array about your smybol
+var k=0;//to count symbol array
+function trinkle(){//maybe won't be used
     for(var i=0;i<alldiv.length;i++){
         if(alldiv[i].id=="row"){
             var row=alldiv[i].style;
@@ -14,7 +16,7 @@ function trinkle(){
         row.visibility="hidden";
     }
 }
-function findscreen(){
+function findscreen(){//get elements of calculator screen
     for(var i=0;i<alldiv.length;i++){
         if(alldiv[i].id=="screen"){
             var content1=alldiv[i];
@@ -45,27 +47,63 @@ function mainnumber(num) {
     }
 }
 
-function calculate(symbol){
+function calculate(symbol,real){
     var txt=findscreen();
     var judge=judgesym();
     if(judge==false){
         txt.innerHTML+=symbol;
+        sym[k]=real;
+        k++;
         j++;
     }
 }
+function percentwrite() {
+    var txt=findscreen();
+    txt.innerHTML+="%";
+    number[j]=number[j]*0.01;
+}
 
+function cal(){
+    var content="";
+    for(var i=0;i<number.length;i++){
+        if(sym[i]==undefined){
+            content=content+number[i];
+        }
+        else {
+            content = content + number[i] + sym[i];
+        }
+    }
+    console.log(content);
+    return content;
+}
 function equal() {
     var result=findscreen();
-    var result1=eval(result.innerHTML);
+    var per=cal();
+    var result1=eval(per);
     result.innerHTML=result1;
     console.log(number);
+    console.log(sym);
 }
 function test() {
-    //console.log(eval(Math.);
+    console.log(number);
 }
 function resetit() {
     number=[];
+    sym=[];
+    k=0;
     j=0;
     var content=findscreen();
     content.innerHTML="";
+}
+
+function percent() {
+    var txt=findscreen();
+    var str=txt.innerHTML.split("");
+    for(var i=0;i<txt.innerHTML.length;i++){
+        if(txt.innerHTML.substring(i,i+1)=="%"){
+            str.splice(i,1,"");
+        }
+    }
+    str=str.join("");
+    return str;
 }
