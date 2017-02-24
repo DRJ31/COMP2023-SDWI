@@ -11,26 +11,41 @@
 <div class="cal">
  <div id="screen"></div>
     <div class="buttoncontainer">
+        <button class="sbutton" onclick="larrow()">←</button>
+        <button class="sbutton" onclick="rarrow()">→</button>
+        <button class="button" onclick="log()">log</button>
+        <button class="button" onclick="sin()">sin</button>
+        <button class="button" onclick="cos()">cos</button>
+        <button class="button" onclick="tan()">tan</button>
+        <button class="button" onclick="exp()">e<sup>x</sup></button>
+        <button class="button" onclick="main(Math.E)">e</button>
+        <button class="button" onclick="main(Math.PI)">&pi;</button>
+        <button class="button" onclick="xxx()">X<sup>2</sup></button>
+        <button class="button" onclick="xxxx()">X!</button>
+        <button class="button" onclick="log10()">ln</button>
+        <button class="button" onclick="sqrt()">√</button>
+        <button class="button" onclick="twox()">2<sup>x</sup></button>
         <button class="button" onclick="resetit()">AC</button>
-        <button class="button" onclick="test()">()</button>
-        <button class="button" onclick="percentwrite()">%</button>
-        <button class="button" onclick="calculate('÷','/')">÷</button>
-        <button class="button" onclick="mainnumber('7')">7</button>
-        <button class="button" onclick="mainnumber('8')">8</button>
-        <button class="button" onclick="mainnumber('9')">9</button>
-        <button class="button" onclick="calculate('x','*')">x</button>
-        <button class="button" onclick="mainnumber('4')">4</button>
-        <button class="button" onclick="mainnumber('5')">5</button>
-        <button class="button" onclick="mainnumber('6')">6</button>
-        <button class="button" onclick="calculate('-','-')">-</button>
-        <button class="button" onclick="mainnumber('1')">1</button>
-        <button class="button" onclick="mainnumber('2')">2</button>
-        <button class="button" onclick="mainnumber('3')">3</button>
-        <button class="button" onclick="calculate('+','+')">+</button>
-        <button class="button" onclick="mainnumber('.')">.</button>
-        <button class="button" onclick="mainnumber('0')">0</button>
-        <button class="button">+/-</button>
+        <button class="button" onclick="main('(')">(</button>
+        <button class="button" onclick="main(')')">)</button>
+        <button class="button" onclick="main('/')">÷</button>
+        <button class="button" onclick="main('7')">7</button>
+        <button class="button" onclick="main('8')">8</button>
+        <button class="button" onclick="main('9')">9</button>
+        <button class="button" onclick="main('*')">x</button>
+        <button class="button" onclick="main('4')">4</button>
+        <button class="button" onclick="main('5')">5</button>
+        <button class="button" onclick="main('6')">6</button>
+        <button class="button" onclick="main('-')">-</button>
+        <button class="button" onclick="main('1')">1</button>
+        <button class="button" onclick="main('2')">2</button>
+        <button class="button" onclick="main('3')">3</button>
+        <button class="button" onclick="main('+')">+</button>
+        <button class="button" onclick="main('.')">.</button>
+        <button class="button" onclick="main('0')">0</button>
+        <button class="button" onclick="clean()">CE</button>
         <button class="button" onclick="equal()">=</button>
+
     </div>
 </div>
 </body>

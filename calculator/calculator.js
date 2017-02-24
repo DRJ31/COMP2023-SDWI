@@ -1,19 +1,26 @@
 var alldiv=document.getElementsByTagName("div");//get all div elements of the document
-var number=[];//array about your inputed number
+var number=[];//array about all your results
 var j=0;//to count array number
-var sym=[];//array about your smybol
-var k=0;//to count symbol array
-function trinkle(){//maybe won't be used
-    for(var i=0;i<alldiv.length;i++){
-        if(alldiv[i].id=="row"){
-            var row=alldiv[i].style;
-        }
-    }
-    if(row.visibility=="hidden"){
-        row.visibility="visible";
+window.onload=function() {//change height on screen of phone version
+    var width=screen.width;
+    var high = findscreen().style;
+    if (width < 768) {
+        var tall=screen.height-450;
+        high.height=tall+"px";
     }
     else{
-        row.visibility="hidden";
+        high.height="150px";
+    }
+}
+window.onresize=function() {//change height of screen
+    var width=screen.width;
+    var high = findscreen().style;
+    if (width < 768) {
+        var tall=screen.height-450;
+        high.height=tall+"px";
+    }
+    else{
+        high.height="150px";
     }
 }
 function findscreen(){//get elements of calculator screen
@@ -24,86 +31,144 @@ function findscreen(){//get elements of calculator screen
     }
     return content1;
 }
-function  judgesym() {
-    var content1=findscreen();
-    var txt=content1.innerHTML;
-    var long=txt.length;
-    var judge=long-txt.lastIndexOf("+")==1||long-txt.lastIndexOf("-")==1||long-txt.lastIndexOf("x")==1||long-txt.lastIndexOf("÷")==1;
-    return judge;
-}
-function mainnumber(num) {
+
+function main(element) {//function of buttons
     var txt=findscreen();
-    if(number.length==j){
-        number[j]=num;
-    }
-    else {
-        number[j] += num;
-    }
-    if(txt.innerHTML.length==0){
-        txt.innerHTML=num;
-    }
-    else{
-        txt.innerHTML+=num;
-    }
+    txt.innerHTML+=element;
 }
 
-function calculate(symbol,real){
-    var txt=findscreen();
-    var judge=judgesym();
-    if(judge==false){
-        txt.innerHTML+=symbol;
-        sym[k]=real;
-        k++;
+function equal() {//calculate function
+    var result=findscreen();
+    var judge=(result.innerHTML!="");
+    var result1=eval(result.innerHTML);
+    result.innerHTML=result1;
+    if(judge==true) {
+        number[j] = result.innerHTML;
         j++;
     }
+    console.log(judge);
 }
-function percentwrite() {
-    var txt=findscreen();
-    txt.innerHTML+="%";
-    number[j]=number[j]*0.01;
-}
-
-function cal(){
-    var content="";
-    for(var i=0;i<number.length;i++){
-        if(sym[i]==undefined){
-            content=content+number[i];
-        }
-        else {
-            content = content + number[i] + sym[i];
-        }
-    }
-    console.log(content);
-    return content;
-}
-function equal() {
-    var result=findscreen();
-    var per=cal();
-    var result1=eval(per);
-    result.innerHTML=result1;
+function test() {//use to test console
     console.log(number);
-    console.log(sym);
+    console.log(j);
 }
-function test() {
-    console.log(number);
-}
-function resetit() {
+function resetit() {//function on AC
     number=[];
-    sym=[];
-    k=0;
     j=0;
     var content=findscreen();
     content.innerHTML="";
 }
 
-function percent() {
+function clean() {//ce function
+    var content=findscreen();
+    content.innerHTML="";
+}
+
+function larrow() {//left arrow function
     var txt=findscreen();
-    var str=txt.innerHTML.split("");
-    for(var i=0;i<txt.innerHTML.length;i++){
-        if(txt.innerHTML.substring(i,i+1)=="%"){
-            str.splice(i,1,"");
-        }
+    if(j==number.length){
+        j-=2;
+        txt.innerHTML=number[j];
     }
-    str=str.join("");
-    return str;
+    else if(j>0){
+        j--;
+        txt.innerHTML=number[j];
+    }
+    else{
+        txt.innerHTML=number[0];
+    }
+}
+
+function rarrow() {//right arrow function
+    var txt=findscreen();
+    if(j<number.length-1){
+        j++;
+        txt.innerHTML=number[j];
+    }
+    else{
+        txt.innerHTML=number[number.length-1];
+    }
+}
+
+function log() {
+    var txt=findscreen();
+    txt.innerHTML=Math.log(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function sin() {
+    var txt=findscreen();
+    txt.innerHTML=Math.sin(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function cos() {
+    var txt=findscreen();
+    txt.innerHTML=Math.cos(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function tan() {
+    var txt=findscreen();
+    txt.innerHTML=Math.tan(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function exp() {//function of e^x
+    var txt=findscreen();
+    txt.innerHTML=Math.exp(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function xxx() {//x^2 function
+    var txt=findscreen();
+    txt.innerHTML=txt.innerHTML*txt.innerHTML;
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function xxxx(){//x! function
+    var txt=findscreen();
+    var numbers=parseInt(txt.innerHTML);
+    var result=1;
+    while(numbers>1){
+        result=result*numbers*(--numbers);
+        numbers--;
+    }
+    number[j]=result;
+    txt.innerHTML=result;
+    j++;
+}
+
+function log10() {//function of ln
+    var txt=findscreen();
+    txt.innerHTML=Math.log(txt.innerHTML)/Math.log(10);
+    number[j]=txt.innerHTML;
+    j++;
+}
+
+function sqrt() {
+    var txt=findscreen();
+    txt.innerHTML=Math.sqrt(txt.innerHTML);
+    number[j]=txt.innerHTML;
+    j++
+}
+
+function twox(){//function of 2^x
+    var txt=findscreen();
+    var num=txt.innerHTML;
+    var count=0;
+    var numbers=1;
+    while(count<num){
+        numbers*=2;
+        count++;
+    }
+    txt.innerHTML=numbers;
+    number[j]=numbers;
+    j++;
 }
