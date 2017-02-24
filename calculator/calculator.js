@@ -46,11 +46,12 @@ function equal() {//calculate function
         number[j] = result.innerHTML;
         j++;
     }
-    console.log(judge);
+    console.log(number);
 }
 function test() {//use to test console
-    console.log(number);
-    console.log(j);
+    var buttons=document.getElementById("minus");
+    console.log(buttons);
+    //console.log(j);
 }
 function resetit() {//function on AC
     number=[];
@@ -66,7 +67,7 @@ function clean() {//ce function
 
 function larrow() {//left arrow function
     var txt=findscreen();
-    if(j==number.length){
+    if(j==number.length&&j>1){
         j-=2;
         txt.innerHTML=number[j];
     }
@@ -77,6 +78,7 @@ function larrow() {//left arrow function
     else{
         txt.innerHTML=number[0];
     }
+    console.log(j);
 }
 
 function rarrow() {//right arrow function
