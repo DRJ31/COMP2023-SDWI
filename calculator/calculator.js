@@ -48,7 +48,27 @@ function main(element) {//function of buttons
     txt1.style.fontSize="30px";
     txt1.style.color="#ccc";
 }
-
+function backspace(){
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var txtarr=txt.innerHTML.split("");
+    txtarr.splice(txtarr.length-1,1);
+    txt.innerHTML=txtarr.join("");
+    var element=txt.innerHTML;
+    var judge=element.length-element.lastIndexOf("+")==1||element.length-element.lastIndexOf("*")==1||element.length-element.lastIndexOf("-")==1||element.length-element.lastIndexOf("/")==1;
+    if(judge==false){
+        txt1.innerHTML=eval(txt.innerHTML);
+    }
+    else{
+        txt1.innerHTML="";
+    }
+    txt.style.height="90px";
+    txt.style.color="black";
+    txt.style.fontSize="60px";
+    txt1.style.height="40px";
+    txt1.style.fontSize="30px";
+    txt1.style.color="#ccc";
+}
 function equal() {//calculate function
     var result=findscreen()[0];
     var result2=findscreen()[1];
