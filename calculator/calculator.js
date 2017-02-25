@@ -78,7 +78,7 @@ function larrow() {//left arrow function
         k-=2;
         txt.innerHTML=number[k];
     }
-    else if(j>0){
+    else if(k>0){
         k--;
         txt.innerHTML=number[k];
     }
@@ -116,69 +116,100 @@ function sin() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var content=txt.innerHTML;
-    txt.innerHTML=Math.sin(txt.innerHTML);
+    txt1.innerHTML=Math.sin(txt.innerHTML);
     txt.innerHTML="sin("+content+")";
     number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function cos() {
-    var txt=findscreen();
-    txt.innerHTML=Math.cos(txt.innerHTML);
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.cos(txt.innerHTML);
+    txt.innerHTML="cos("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function tan() {
-    var txt=findscreen();
-    txt.innerHTML=Math.tan(txt.innerHTML);
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.tan(txt.innerHTML);
+    txt.innerHTML="tan("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function exp() {//function of e^x
-    var txt=findscreen();
-    txt.innerHTML=Math.exp(txt.innerHTML);
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.exp(txt.innerHTML);
+    txt.innerHTML="e^("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function xxx() {//x^2 function
-    var txt=findscreen();
-    txt.innerHTML=txt.innerHTML*txt.innerHTML;
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=txt.innerHTML*txt.innerHTML;
+    txt.innerHTML="("+content+")^2";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function xxxx(){//x! function
-    var txt=findscreen();
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
     var numbers=parseInt(txt.innerHTML);
     var result=1;
     while(numbers>1){
         result=result*numbers*(--numbers);
         numbers--;
     }
+    txt.innerHTML=content+"!";
     number[j]=result;
-    txt.innerHTML=result;
+    txt1.innerHTML=result;
     j++;
+    k=j;
 }
 
 function log10() {//function of ln
-    var txt=findscreen();
-    txt.innerHTML=Math.log(txt.innerHTML)/Math.log(10);
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.log(txt.innerHTML)/Math.log(10);
+    txt.innerHTML="ln("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function sqrt() {
-    var txt=findscreen();
-    txt.innerHTML=Math.sqrt(txt.innerHTML);
-    number[j]=txt.innerHTML;
-    j++
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.sqrt(txt.innerHTML);
+    txt.innerHTML="√("+content+")";
+    number[j]=txt1.innerHTML;
+    j++;
+    k=j;
 }
 
 function twox(){//function of 2^x
-    var txt=findscreen();
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
     var num=txt.innerHTML;
     var count=0;
     var numbers=1;
@@ -186,7 +217,9 @@ function twox(){//function of 2^x
         numbers*=2;
         count++;
     }
-    txt.innerHTML=numbers;
+    txt1.innerHTML=numbers;
+    txt.innerHTML="2^("+content+")";
     number[j]=numbers;
     j++;
+    k=j;
 }

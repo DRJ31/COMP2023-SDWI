@@ -211,11 +211,9 @@ p{
     margin-top: 30px;
 }
 
-.joinbutton{
-    color: deepskyblue;
+.bottombutton{/*buttons at the bottom*/
     width:60%;
     margin-left: 20%;
-    border: 1px solid deepskyblue;
     border-radius: 10px;
     font-size: 20px;
     padding-top: 10px;
@@ -225,16 +223,33 @@ p{
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
+.join{
+    color: deepskyblue;
+    border: 1px solid deepskyblue;
+}
 @media (max-width: 767px) {
-    .joinbutton{
+    .join{
         color: white;
         background-color: deepskyblue;
     }
 }
-.joinbutton:hover{
+.join:hover{
     color: white;
     background-color: deepskyblue;
+}
+.calculator{
+    color: #78c357;
+    border: 1px solid #78c357;
+}
+@media (max-width: 767px) {
+    .calculator{
+        color: white;
+        background-color: #78c357;
+    }
+}
+.calculator:hover{
+    color: white;
+    background-color: #78c357;
 }
 @media(max-width: 767px){
     .favbutton1{

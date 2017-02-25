@@ -17,7 +17,6 @@
 }
 
 .button{/*style of buttons*/
-    border:1px solid #ddd;
     width: 25%;
     float: left;
     font-family: Consolas;
@@ -26,9 +25,22 @@
     font-size: 30px;
     transition: 0.1s;
     outline: none;
+    border: 1px solid #ccc;
+}
+.greybg{
+    background-color: #ddd;
+}
+.blue{
+    color: #4d90fe;
+    background-color: #eee;
+}
+.equal{
+    background-color: #78c357;
+    border: 1px solid #78c357;
+    color: white;
 }
 .sbutton{/*style of buttons*/
-    border:1px solid #ddd;
+    border:1px solid #eee;
     width: 50%;
     float: left;
     font-family: Consolas;
@@ -57,7 +69,9 @@
 .button:visited,.sbutton:visited{
     background-color: white;
 }
-
+.equal:active{
+    background-color: #549d34;
+}
 #above{
     width: 90%;
     height: 90px;
@@ -78,6 +92,7 @@
     padding-right: 5%;
     padding-top: 10px;
     overflow-x: auto;
+    color: #78c357;
 }
 
 ::-webkit-scrollbar{width: 0px}
