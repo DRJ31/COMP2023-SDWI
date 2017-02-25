@@ -1,9 +1,9 @@
-var alldiv=document.getElementsByTagName("div");//get all div elements of the document
 var number=[];//array about all your results
 var j=0;//to count array number
+var k=0;//arrow counter
 window.onload=function() {//change height on screen of phone version
     var width=screen.width;
-    var high = findscreen().style;
+    var high = document.getElementById("screen").style;
     if (width < 768) {
         var tall=screen.height-450;
         high.height=tall+"px";
@@ -14,7 +14,7 @@ window.onload=function() {//change height on screen of phone version
 }
 window.onresize=function() {//change height of screen
     var width=screen.width;
-    var high = findscreen().style;
+    var high = document.getElementById("screen").style;
     if (width < 768) {
         var tall=screen.height-450;
         high.height=tall+"px";
@@ -24,27 +24,27 @@ window.onresize=function() {//change height of screen
     }
 }
 function findscreen(){//get elements of calculator screen
-    for(var i=0;i<alldiv.length;i++){
-        if(alldiv[i].id=="screen"){
-            var content1=alldiv[i];
-        }
-    }
-    return content1;
+    var arr=[];
+    arr[0]=document.getElementById("above");
+    arr[1]=document.getElementById("bottom");
+    return arr;
 }
 
 function main(element) {//function of buttons
-    var txt=findscreen();
+    var txt=findscreen()[0];
     txt.innerHTML+=element;
 }
 
 function equal() {//calculate function
-    var result=findscreen();
+    var result=findscreen()[0];
+    var result2=findscreen()[1];
     var judge=(result.innerHTML!="");
     var result1=eval(result.innerHTML);
-    result.innerHTML=result1;
+    result2.innerHTML=result1;
     if(judge==true) {
-        number[j] = result.innerHTML;
+        number[j] = result2.innerHTML;
         j++;
+        k=j;
     }
     console.log(number);
 }
@@ -56,36 +56,45 @@ function test() {//use to test console
 function resetit() {//function on AC
     number=[];
     j=0;
-    var content=findscreen();
+    k=0;
+    var content=findscreen()[0];
+    var content1=findscreen()[1];
     content.innerHTML="";
+    content1.innerHTML="";
 }
 
 function clean() {//ce function
-    var content=findscreen();
+    var content=findscreen()[0];
+    var content1=findscreen()[1];
     content.innerHTML="";
+    content1.innerHTML="";
 }
 
 function larrow() {//left arrow function
-    var txt=findscreen();
-    if(j==number.length&&j>1){
-        j-=2;
-        txt.innerHTML=number[j];
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    txt1.innerHTML="";
+    if(k==number.length&&k>1){
+        k-=2;
+        txt.innerHTML=number[k];
     }
     else if(j>0){
-        j--;
-        txt.innerHTML=number[j];
+        k--;
+        txt.innerHTML=number[k];
     }
     else{
         txt.innerHTML=number[0];
     }
-    console.log(j);
+    console.log(k);
 }
 
 function rarrow() {//right arrow function
-    var txt=findscreen();
-    if(j<number.length-1){
-        j++;
-        txt.innerHTML=number[j];
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    txt1.innerHTML="";
+    if(k<number.length-1){
+        k++;
+        txt.innerHTML=number[k];
     }
     else{
         txt.innerHTML=number[number.length-1];
@@ -93,16 +102,23 @@ function rarrow() {//right arrow function
 }
 
 function log() {
-    var txt=findscreen();
-    txt.innerHTML=Math.log(txt.innerHTML);
-    number[j]=txt.innerHTML;
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
+    txt1.innerHTML=Math.log(txt.innerHTML);
+    txt.innerHTML="log("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
+    k=j;
 }
 
 function sin() {
-    var txt=findscreen();
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    var content=txt.innerHTML;
     txt.innerHTML=Math.sin(txt.innerHTML);
-    number[j]=txt.innerHTML;
+    txt.innerHTML="sin("+content+")";
+    number[j]=txt1.innerHTML;
     j++;
 }
 
