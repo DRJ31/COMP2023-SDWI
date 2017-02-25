@@ -86,7 +86,7 @@
 }
 @media(max-width: 767px){
     #above{
-        margin-top: 60px;
+        margin-top: 50px;
     }
 }
 
@@ -97,16 +97,14 @@
     font-size: 30px;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 10px;
     overflow-x: auto;
-    color: #78c357;
+    color: #ccc;
     transition: 0.1s;
 }
 
 @media (max-width: 330px) {
     #above,#bottom{
         margin-top: 0;
-        padding-top: 0;
     }
 }
 ::-webkit-scrollbar{width: 0px}
