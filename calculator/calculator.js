@@ -41,6 +41,12 @@ function main(element) {//function of buttons
     else{
         txt1.innerHTML="";
     }
+    txt.style.height="90px";
+    txt.style.color="black";
+    txt.style.fontSize="60px";
+    txt1.style.height="40px";
+    txt1.style.fontSize="30px";
+    txt1.style.color="#ccc";
 }
 
 function equal() {//calculate function
