@@ -48,7 +48,7 @@ function main(element) {//function of buttons
     txt1.style.fontSize="30px";
     txt1.style.color="#ccc";
 }
-function shake(time){
+function shake(time){//your phone will shake if it is an android phone with chrome when you press button
     if(navigator.vibrate){
         navigator.vibrate(time);
     }
@@ -56,7 +56,7 @@ function shake(time){
         navigator.webkitVibrate(time);
     }
 }
-function backspace(){
+function backspace(){//function of backspace button
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var txtarr=txt.innerHTML.split("");

@@ -64,7 +64,7 @@
         height: 100%;
     }
 }
-
+/*change button's color when click*/
 .button:active,.sbutton:active{
     background-color: rgba(171,221,243,0.3);
 }
