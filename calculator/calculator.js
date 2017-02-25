@@ -40,6 +40,11 @@ function equal() {//calculate function
     var result2=findscreen()[1];
     var judge=(result.innerHTML!="");
     var result1=eval(result.innerHTML);
+    result.style.height="40px";
+    result.style.fontSize="30px";
+    result.style.color="#ccc";
+    result2.style.height="90px";
+    result2.style.fontSize="60px";
     result2.innerHTML=result1;
     if(judge==true) {
         number[j] = result2.innerHTML;
@@ -48,17 +53,17 @@ function equal() {//calculate function
     }
     console.log(number);
 }
-function test() {//use to test console
-    var buttons=document.getElementById("minus");
-    console.log(buttons);
-    //console.log(j);
-}
 function resetit() {//function on AC
     number=[];
     j=0;
     k=0;
     var content=findscreen()[0];
     var content1=findscreen()[1];
+    content.style.height="90px";
+    content.style.color="black";
+    content.style.fontSize="60px";
+    content1.style.height="40px";
+    content1.style.fontSize="30px";
     content.innerHTML="";
     content1.innerHTML="";
 }
@@ -66,6 +71,11 @@ function resetit() {//function on AC
 function clean() {//ce function
     var content=findscreen()[0];
     var content1=findscreen()[1];
+    content.style.height="90px";
+    content.style.color="black";
+    content.style.fontSize="60px";
+    content1.style.height="40px";
+    content1.style.fontSize="30px";
     content.innerHTML="";
     content1.innerHTML="";
 }
@@ -74,18 +84,18 @@ function larrow() {//left arrow function
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     txt1.innerHTML="";
-    if(k==number.length&&k>1){
-        k-=2;
-        txt.innerHTML=number[k];
-    }
-    else if(k>0){
+    if(k>0){
         k--;
         txt.innerHTML=number[k];
     }
     else{
         txt.innerHTML=number[0];
     }
-    console.log(k);
+    txt.style.height="90px";
+    txt.style.color="black";
+    txt.style.fontSize="60px";
+    txt1.style.height="40px";
+    txt1.style.fontSize="30px";
 }
 
 function rarrow() {//right arrow function
@@ -99,6 +109,11 @@ function rarrow() {//right arrow function
     else{
         txt.innerHTML=number[number.length-1];
     }
+    txt.style.height="90px";
+    txt.style.color="black";
+    txt.style.fontSize="60px";
+    txt1.style.height="40px";
+    txt1.style.fontSize="30px";
 }
 
 function log() {
@@ -110,6 +125,11 @@ function log() {
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function sin() {
@@ -121,6 +141,11 @@ function sin() {
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function cos() {
@@ -132,6 +157,11 @@ function cos() {
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function tan() {
@@ -143,6 +173,11 @@ function tan() {
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function exp() {//function of e^x
@@ -154,6 +189,11 @@ function exp() {//function of e^x
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function xxx() {//x^2 function
@@ -165,6 +205,11 @@ function xxx() {//x^2 function
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function xxxx(){//x! function
@@ -182,6 +227,11 @@ function xxxx(){//x! function
     txt1.innerHTML=result;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function log10() {//function of ln
@@ -193,6 +243,11 @@ function log10() {//function of ln
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function sqrt() {
@@ -204,6 +259,11 @@ function sqrt() {
     number[j]=txt1.innerHTML;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }
 
 function twox(){//function of 2^x
@@ -222,4 +282,9 @@ function twox(){//function of 2^x
     number[j]=numbers;
     j++;
     k=j;
+    txt.style.height="40px";
+    txt.style.color="#ccc";
+    txt.style.fontSize="30px";
+    txt1.style.height="90px";
+    txt1.style.fontSize="60px";
 }

@@ -223,7 +223,7 @@ p{
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.join{
+.join{/*style of join company button*/
     color: deepskyblue;
     border: 1px solid deepskyblue;
 }
@@ -237,7 +237,7 @@ p{
     color: white;
     background-color: deepskyblue;
 }
-.calculator{
+.calculator{/*style of calculator button*/
     color: #78c357;
     border: 1px solid #78c357;
 }
