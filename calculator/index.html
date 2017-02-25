@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="white">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="calculator.js"></script>
@@ -13,41 +14,41 @@
  <div id="screen"><div id="above"></div><div id="bottom"></div></div>
     <!--button part-->
     <div class="buttoncontainer">
-        <button class="sbutton" onclick="larrow()">←</button>
-        <button class="sbutton" onclick="rarrow()">→</button>
-        <button class="sbutton" onclick="backspace()">&Larr;</button>
-        <button class="button greybg" onclick="log()">log</button>
-        <button class="button greybg" onclick="sin()">sin</button>
-        <button class="button greybg" onclick="cos()">cos</button>
-        <button class="button greybg" onclick="tan()">tan</button>
-        <button class="button greybg" onclick="exp()">e<sup>x</sup></button>
-        <button class="button greybg" onclick="main(Math.E)">e</button>
-        <button class="button greybg" onclick="main(Math.PI)">&pi;</button>
-        <button class="button greybg" onclick="xxx()">X<sup>2</sup></button>
-        <button class="button greybg" onclick="xxxx()">X!</button>
-        <button class="button greybg" onclick="log10()">ln</button>
-        <button class="button greybg" onclick="sqrt()">√</button>
-        <button class="button greybg" onclick="twox()">2<sup>x</sup></button>
-        <button class="button blue" onclick="resetit()">AC</button>
-        <button class="button blue" onclick="main('(')">(</button>
-        <button class="button blue" onclick="main(')')">)</button>
-        <button class="button blue" onclick="main('/')">÷</button>
-        <button class="button" onclick="main('7')">7</button>
-        <button class="button" onclick="main('8')">8</button>
-        <button class="button" onclick="main('9')">9</button>
-        <button class="button blue" onclick="main('*')">x</button>
-        <button class="button" onclick="main('4')">4</button>
-        <button class="button" onclick="main('5')">5</button>
-        <button class="button" onclick="main('6')">6</button>
-        <button class="button blue" onclick="main('-')">-</button>
-        <button class="button" onclick="main('1')">1</button>
-        <button class="button" onclick="main('2')">2</button>
-        <button class="button" onclick="main('3')">3</button>
-        <button class="button blue" onclick="main('+')">+</button>
-        <button class="button" onclick="main('.')">.</button>
-        <button class="button" onclick="main('0')">0</button>
-        <button class="button" onclick="clean()">CE</button>
-        <button class="button equal" onclick="equal()">=</button>
+        <button class="sbutton" onclick="larrow();shake(100)">←</button>
+        <button class="sbutton" onclick="rarrow();shake(100)">→</button>
+        <button class="sbutton" onclick="backspace();shake(100)">&Larr;</button>
+        <button class="button greybg" onclick="log();shake(100)">log</button>
+        <button class="button greybg" onclick="sin();shake(100)">sin</button>
+        <button class="button greybg" onclick="cos();shake(100)">cos</button>
+        <button class="button greybg" onclick="tan();shake(100)">tan</button>
+        <button class="button greybg" onclick="exp();shake(100)">e<sup>x</sup></button>
+        <button class="button greybg" onclick="main(Math.E);shake(100)">e</button>
+        <button class="button greybg" onclick="main(Math.PI);shake(100)">&pi;</button>
+        <button class="button greybg" onclick="xxx();shake(100)">X<sup>2</sup></button>
+        <button class="button greybg" onclick="xxxx();shake(100)">X!</button>
+        <button class="button greybg" onclick="log10();shake(100)">ln</button>
+        <button class="button greybg" onclick="sqrt();shake(100)">√</button>
+        <button class="button greybg" onclick="twox();shake(100)">2<sup>x</sup></button>
+        <button class="button blue" onclick="resetit();shake(100)">AC</button>
+        <button class="button blue" onclick="main('(');shake(100)">(</button>
+        <button class="button blue" onclick="main(')');shake(100)">)</button>
+        <button class="button blue" onclick="main('/');shake(100)">÷</button>
+        <button class="button" onclick="main('7');shake(100)">7</button>
+        <button class="button" onclick="main('8');shake(100)">8</button>
+        <button class="button" onclick="main('9');shake(100)">9</button>
+        <button class="button blue" onclick="main('*');shake(100)">x</button>
+        <button class="button" onclick="main('4');shake(100)">4</button>
+        <button class="button" onclick="main('5');shake(100)">5</button>
+        <button class="button" onclick="main('6');shake(100)">6</button>
+        <button class="button blue" onclick="main('-');shake(100)">-</button>
+        <button class="button" onclick="main('1');shake(100)">1</button>
+        <button class="button" onclick="main('2');shake(100)">2</button>
+        <button class="button" onclick="main('3');shake(100)">3</button>
+        <button class="button blue" onclick="main('+');shake(100)">+</button>
+        <button class="button" onclick="main('.');shake(100)">.</button>
+        <button class="button" onclick="main('0');shake(100)">0</button>
+        <button class="button" onclick="clean();shake(100)">CE</button>
+        <button class="button equal" onclick="equal();shake(100)">=</button>
 
     </div>
 </div>

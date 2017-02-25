@@ -48,6 +48,14 @@ function main(element) {//function of buttons
     txt1.style.fontSize="30px";
     txt1.style.color="#ccc";
 }
+function shake(time){
+    if(navigator.vibrate){
+        navigator.vibrate(time);
+    }
+    else if(navigator.webkitVibrate){
+        navigator.webkitVibrate(time);
+    }
+}
 function backspace(){
     var txt=findscreen()[0];
     var txt1=findscreen()[1];

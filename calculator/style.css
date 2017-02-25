@@ -24,31 +24,33 @@
     height: 50px;
     background-color: white;
     font-size: 30px;
-    transition: 0.1s;
+    transition: 0.2s;
     outline: none;
-    border: 1px solid #ccc;
+    box-shadow: 0px 5px 20px #ddd;
+    border: none;
 }
 .greybg{/*background of high class function*/
-    background-color: #ddd;
+    background-color: #eee;
 }
 .blue{/*blue font color button*/
-    color: #4d90fe;
-    background-color: #eee;
+    color: deepskyblue;
+    background-color: #f7f7f7;
 }
 .equal{/*style of equal button*/
     background-color: #78c357;
-    border: 1px solid #78c357;
     color: white;
 }
 .sbutton{/*style of arrow button*/
-    border:1px solid #eee;
+    border: none;
     width: 33.333%;
     float: left;
     font-family: Consolas;
+    margin-bottom: 2px;
     height: 50px;
+    color: deepskyblue;
     background-color: white;
     font-size: 30px;
-    transition: 0.1s;
+    transition: 0.2s;
     outline: none;
 }
 .buttoncontainer{/*container of buttons*/
@@ -82,7 +84,7 @@
     padding-right: 5%;
     padding-top: 10px;
     overflow-x: auto;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 @media(max-width: 767px){
     #above{
@@ -99,7 +101,7 @@
     padding-right: 5%;
     overflow-x: auto;
     color: #ccc;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 @media (max-width: 330px) {
