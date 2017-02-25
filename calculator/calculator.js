@@ -167,7 +167,7 @@ function log() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var content=txt.innerHTML;
-    txt1.innerHTML=Math.log(txt.innerHTML);
+    txt1.innerHTML=Math.log(txt.innerHTML)/Math.log(10);
     txt.innerHTML="log("+content+")";
     number[j]=txt1.innerHTML;
     j++;
@@ -292,7 +292,7 @@ function log10() {//function of ln
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var content=txt.innerHTML;
-    txt1.innerHTML=Math.log(txt.innerHTML)/Math.log(10);
+    txt1.innerHTML=Math.log(txt.innerHTML);
     txt.innerHTML="ln("+content+")";
     number[j]=txt1.innerHTML;
     j++;
