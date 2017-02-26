@@ -2,7 +2,7 @@ var number=[];//array about all your results
 var j=0;//to count array number
 var k=0;//arrow counter
 var day=new Date();
-var hour=day.getHours();
+var hour=day.getHours();//get hour of now
 var css=document.getElementById("style");
 var theme=document.getElementById("theme");
 if(hour>=21||hour<=7){//change into night mode after 9:00 PM
@@ -25,9 +25,8 @@ function changemod(){//change css while press button
 function night(name){//change into night mode or normal mode
     css.setAttribute("href",name);
     theme.setAttribute("content","#333");
-    console.log(theme);
 }
-window.onload=function() {//change height on screen of phone version
+window.onload=function() {//change height of screen in phone version
     var width=screen.width;
     var high = document.getElementById("screen").style;
     if (width < 768) {
@@ -37,6 +36,7 @@ window.onload=function() {//change height on screen of phone version
     else{
         high.height="150px";
     }
+    //change words while css changes
     var word=document.getElementById("changemod");
     var judge=css.href.match(/nightmod/g);
     if(judge!=null){
@@ -46,7 +46,7 @@ window.onload=function() {//change height on screen of phone version
         word.innerHTML="Night";
     }
 };
-window.onresize=function() {//change height of screen
+window.onresize=function() {//change height of screen while resize the screen
     var width=screen.width;
     var high = document.getElementById("screen").style;
     if (width < 768) {
@@ -130,20 +130,19 @@ function equal() {//calculate function
     var judge1=css.href.match(/nightmod/g);
     var judge=(result.innerHTML!="");
     if(judge==true) {
-    var result1=eval(result.innerHTML);
-    result.style.height="40px";
-    result.style.fontSize="30px";
-    result.style.color="#ccc";
-    result2.style.height="90px";
-    result2.style.fontSize="60px";
-    if(judge1!=null){
-        result2.style.color="deepskyblue";
-    }
-    else{
-        result2.style.color="#78c357";
-    }
-    result2.innerHTML=result1;
-
+        var result1=eval(result.innerHTML);
+        result.style.height="40px";
+        result.style.fontSize="30px";
+        result.style.color="#ccc";
+        result2.style.height="90px";
+        result2.style.fontSize="60px";
+        if(judge1!=null){
+            result2.style.color="deepskyblue";
+        }
+        else{
+            result2.style.color="#78c357";
+        }
+        result2.innerHTML=result1;
         number[j] = result2.innerHTML;
         j++;
         k=j;
