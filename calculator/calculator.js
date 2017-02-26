@@ -4,24 +4,28 @@ var k=0;//arrow counter
 var day=new Date();
 var hour=day.getHours();
 var css=document.getElementById("style");
+var theme=document.getElementById("theme");
 if(hour>=21||hour<=7){//change into night mode after 9:00 PM
     night("nightmode.css");
 }
-function changemod(){
-    var css=document.getElementById("style");
+function changemod(){//change css while press button
     var judge=css.href.match(/nightmod/g);
     var word=document.getElementById("changemod");
     if(judge!=null){
         css.setAttribute("href","style.css");
+        theme.setAttribute("content","#333");
         word.innerHTML="Night";
     }
     else{
         css.setAttribute("href","nightmode.css");
+        theme.setAttribute("content","#fff");
         word.innerHTML="White";
     }
 }
 function night(name){//change into night mode or normal mode
     css.setAttribute("href",name);
+    theme.setAttribute("content","#333");
+    console.log(theme);
 }
 window.onload=function() {//change height on screen of phone version
     var width=screen.width;
