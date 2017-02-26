@@ -26,8 +26,10 @@ window.onresize=function() {//change height of screen
 function mainjudge(){//regexp
     var strjudge=[];
     strjudge[0]=/[a-z\^√!]/g;//judge if there are English letters in string
-    strjudge[1]=/\D/g;//judge if there are numbers in string
+    strjudge[1]=/[\+\-\*\/]/g;//judge if there are + - * / in string
     strjudge[2]=/[\+\-\*\/]$/g;//judge if + - * / is the last element of string
+    strjudge[3]=/.*[^\+\-\*\/]/g;//get elements before if the last element
+    // is + - * /
     return strjudge;
 }
 function findscreen(){//get elements of calculator screen
@@ -58,12 +60,7 @@ function main(element) {//function of buttons
         txt1.innerHTML=number[j-1];
         console.log(number);
     }
-    txt.style.height="90px";
-    txt.style.color="black";
-    txt.style.fontSize="60px";
-    txt1.style.height="40px";
-    txt1.style.fontSize="30px";
-    txt1.style.color="#ccc";
+    changeblack();
 }
 function shake(time){//your phone will shake if it is an android phone with chrome when you press button
     if(navigator.vibrate){
@@ -92,12 +89,7 @@ function backspace(){//function of backspace button
     else{
         txt1.innerHTML="";
     }
-    txt.style.height="90px";
-    txt.style.color="black";
-    txt.style.fontSize="60px";
-    txt1.style.height="40px";
-    txt1.style.fontSize="30px";
-    txt1.style.color="#ccc";
+    changeblack();
 }
 function equal() {//calculate function
     var result=findscreen()[0];
@@ -122,14 +114,9 @@ function resetit() {//function on AC
     number=[];
     j=0;
     k=0;
+    changeblack();
     var content=findscreen()[0];
     var content1=findscreen()[1];
-    content.style.height="90px";
-    content.style.color="black";
-    content.style.fontSize="60px";
-    content1.style.height="40px";
-    content1.style.fontSize="30px";
-    content1.style.color="#ccc";
     content.innerHTML="";
     content1.innerHTML="";
 }
@@ -137,12 +124,7 @@ function resetit() {//function on AC
 function clean() {//ce function
     var content=findscreen()[0];
     var content1=findscreen()[1];
-    content.style.height="90px";
-    content.style.color="black";
-    content.style.fontSize="60px";
-    content1.style.height="40px";
-    content1.style.fontSize="30px";
-    content1.style.color="#ccc";
+    changeblack();
     content.innerHTML="";
     content1.innerHTML="";
 }
@@ -152,21 +134,16 @@ function larrow() {//left arrow function
     var txt1=findscreen()[1];
     txt1.innerHTML="";
     if(number.length==0){
-        txt.innerHTML=="";
+        txt.innerHTML="";
     }
-    else if(k>0&&number[k].length>0){
+    else if(k>0&&number[k-1].length>0){
         k--;
         txt.innerHTML=number[k];
     }
     else if(number[0].length>0){
         txt.innerHTML=number[0];
     }
-    txt.style.height="90px";
-    txt.style.color="black";
-    txt.style.fontSize="60px";
-    txt1.style.height="40px";
-    txt1.style.fontSize="30px";
-    txt1.style.color="#ccc";
+    changeblack();
 }
 
 function rarrow() {//right arrow function
@@ -183,6 +160,23 @@ function rarrow() {//right arrow function
     else if(number[0].length>0){
         txt.innerHTML=number[number.length-1];
     }
+    changeblack();
+}
+function changegreen() {//change result into green
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
+    j++;
+    k = j;
+    txt.style.height = "40px";
+    txt.style.color = "#ccc";
+    txt.style.fontSize = "30px";
+    txt1.style.height = "90px";
+    txt1.style.fontSize = "60px";
+    txt1.style.color = "#78c357";
+}
+function changeblack() {//change #above into black
+    var txt=findscreen()[0];
+    var txt1=findscreen()[1];
     txt.style.height="90px";
     txt.style.color="black";
     txt.style.fontSize="60px";
@@ -201,19 +195,36 @@ function log() {
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
-    else {
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.log(content) / Math.log(10);
+            txt.innerHTML = "log(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null){
+        if(txt1.innerHTML.length>0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.log(txt1.innerHTML) / Math.log(10);
+            txt.innerHTML = "log(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else{
+            alert("Please check your syntax");
+        }
+    }
+    else{
         var content = txt.innerHTML;
         txt1.innerHTML = Math.log(txt.innerHTML) / Math.log(10);
         txt.innerHTML = "log(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -227,19 +238,36 @@ function sin() {
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.sin(content);
+            txt.innerHTML = "sin(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.sin(txt1.innerHTML);
+            txt.innerHTML = "sin(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.sin(txt.innerHTML);
         txt.innerHTML = "sin(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -253,19 +281,36 @@ function cos() {
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.cos(content);
+            txt.innerHTML = "cos(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.cos(txt1.innerHTML);
+            txt.innerHTML = "cos(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.cos(txt.innerHTML);
         txt.innerHTML = "cos(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -279,19 +324,36 @@ function tan() {
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.tan(content);
+            txt.innerHTML = "tan(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.tan(txt1.innerHTML);
+            txt.innerHTML = "tan(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.tan(txt.innerHTML);
         txt.innerHTML = "tan(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -305,19 +367,36 @@ function exp() {//function of e^x
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.exp(content);
+            txt.innerHTML = "e^(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.exp(txt1.innerHTML);
+            txt.innerHTML = "e^(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.exp(txt.innerHTML);
         txt.innerHTML = "e^(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -336,14 +415,7 @@ function xxx() {//x^2 function
         txt1.innerHTML = txt.innerHTML * txt.innerHTML;
         txt.innerHTML = "(" + content + ")^2";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -368,14 +440,7 @@ function xxxx(){//x! function
         txt.innerHTML = content + "!";
         number[j] = result;
         txt1.innerHTML = result;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -389,19 +454,36 @@ function log10() {//function of ln
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.log(content);
+            txt.innerHTML = "ln(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.log(txt1.innerHTML);
+            txt.innerHTML = "ln(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.log(txt.innerHTML);
         txt.innerHTML = "ln(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -415,19 +497,36 @@ function sqrt() {
     else if(txt.innerHTML.match(strjudge[0])!=null){
         alert("Please reset and continue");
     }
+    else if(txt.innerHTML.match(strjudge[2])!=null){
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML = Math.sqrt(content);
+            txt.innerHTML = "√(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML = Math.sqrt(txt1.innerHTML);
+            txt.innerHTML = "√(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
+    }
     else {
         var content = txt.innerHTML;
         txt1.innerHTML = Math.sqrt(txt.innerHTML);
         txt.innerHTML = "√(" + content + ")";
         number[j] = txt1.innerHTML;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
 
@@ -453,13 +552,6 @@ function twox(){//function of 2^x
         txt1.innerHTML = numbers;
         txt.innerHTML = "2^(" + content + ")";
         number[j] = numbers;
-        j++;
-        k = j;
-        txt.style.height = "40px";
-        txt.style.color = "#ccc";
-        txt.style.fontSize = "30px";
-        txt1.style.height = "90px";
-        txt1.style.fontSize = "60px";
-        txt1.style.color = "#78c357";
+        changegreen();
     }
 }
