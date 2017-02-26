@@ -206,22 +206,10 @@ function log() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null){//check if there is + - * / in main screen
-        if(txt1.innerHTML.length>0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.log(txt1.innerHTML) / Math.log(10);
-            txt.innerHTML = "log(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else{
-            alert("Please check your syntax");
-        }
-    }
     else{
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.log(txt.innerHTML) / Math.log(10);
-        txt.innerHTML = "log(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.log(content) / Math.log(10);
+        txt.innerHTML = "log(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -249,22 +237,10 @@ function sin() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.sin(txt1.innerHTML);
-            txt.innerHTML = "sin(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.sin(txt.innerHTML);
-        txt.innerHTML = "sin(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.sin(content);
+        txt.innerHTML = "sin(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -292,22 +268,10 @@ function cos() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.cos(txt1.innerHTML);
-            txt.innerHTML = "cos(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.cos(txt.innerHTML);
-        txt.innerHTML = "cos(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.cos(content);
+        txt.innerHTML = "cos(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -335,22 +299,10 @@ function tan() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.tan(txt1.innerHTML);
-            txt.innerHTML = "tan(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.tan(txt.innerHTML);
-        txt.innerHTML = "tan(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.tan(content);
+        txt.innerHTML = "tan(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -378,22 +330,10 @@ function exp() {//function of e^x
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.exp(txt1.innerHTML);
-            txt.innerHTML = "e^(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.exp(txt.innerHTML);
-        txt.innerHTML = "e^(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.exp(content);
+        txt.innerHTML = "e^(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -421,22 +361,10 @@ function xxx() {//x^2 function
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML=content*content;
-            txt.innerHTML = "(" + content + ")^2";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = txt.innerHTML * txt.innerHTML;
-        txt.innerHTML = "(" + content + ")^2";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = content * content;
+        txt.innerHTML = "(" + txt.innerHTML + ")^2";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -470,27 +398,9 @@ function xxxx(){//x! function
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            var numbers = parseInt(content);
-            var result = 1;
-            while (numbers > 1) {
-                result = result * numbers * (--numbers);
-                numbers--;
-            }
-            txt.innerHTML = content + "!";
-            txt1.innerHTML = result;
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        var numbers = parseInt(txt.innerHTML);
+        var content = eval(txt.innerHTML);
+        var numbers = parseInt(content);
         var result = 1;
         while (numbers > 1) {
             result = result * numbers * (--numbers);
@@ -525,22 +435,10 @@ function log10() {//function of ln
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.log(txt1.innerHTML);
-            txt.innerHTML = "ln(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.log(txt.innerHTML);
-        txt.innerHTML = "ln(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.log(content);
+        txt.innerHTML = "ln(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -568,22 +466,10 @@ function sqrt() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            txt1.innerHTML = Math.sqrt(txt1.innerHTML);
-            txt.innerHTML = "√(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        txt1.innerHTML = Math.sqrt(txt.innerHTML);
-        txt.innerHTML = "√(" + content + ")";
+        var content = eval(txt.innerHTML);
+        txt1.innerHTML = Math.sqrt(content);
+        txt.innerHTML = "√(" + txt.innerHTML + ")";
         number[j] = txt1.innerHTML;
         changegreen();
     }
@@ -618,28 +504,9 @@ function twox(){//function of 2^x
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
-        if (txt1.innerHTML.length > 0) {
-            var content = txt1.innerHTML;
-            var num = content;
-            var count = 0;
-            var numbers = 1;
-            while (count < num) {
-                numbers *= 2;
-                count++;
-            }
-            txt1.innerHTML = numbers;
-            txt.innerHTML = "2^(" + content + ")";
-            number[j] = txt1.innerHTML;
-            changegreen();
-        }
-        else {
-            alert("Please check your syntax");
-        }
-    }
     else {
-        var content = txt.innerHTML;
-        var num = txt.innerHTML;
+        var content = eval(txt.innerHTML);
+        var num = content;
         var count = 0;
         var numbers = 1;
         while (count < num) {
@@ -647,7 +514,7 @@ function twox(){//function of 2^x
             count++;
         }
         txt1.innerHTML = numbers;
-        txt.innerHTML = "2^(" + content + ")";
+        txt.innerHTML = "2^(" + txt.innerHTML + ")";
         number[j] = numbers;
         changegreen();
     }
