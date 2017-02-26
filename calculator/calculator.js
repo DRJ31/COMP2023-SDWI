@@ -28,8 +28,7 @@ function mainjudge(){//regexp
     strjudge[0]=/[a-z\^√!]/g;//judge if there are English letters in string
     strjudge[1]=/[\+\-\*\/]/g;//judge if there are + - * / in string
     strjudge[2]=/[\+\-\*\/]$/g;//judge if + - * / is the last element of string
-    strjudge[3]=/.*[^\+\-\*\/]/g;//get elements before if the last element
-    // is + - * /
+    strjudge[3]=/.*[^\+\-\*\/]/g;//get elements before if the last element is + - * /
     return strjudge;
 }
 function findscreen(){//get elements of calculator screen
@@ -192,11 +191,11 @@ function log() {
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -207,7 +206,7 @@ function log() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null){
+    else if(txt.innerHTML.match(strjudge[1])!=null){//check if there is + - * / in main screen
         if(txt1.innerHTML.length>0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.log(txt1.innerHTML) / Math.log(10);
@@ -235,11 +234,11 @@ function sin() {
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -250,7 +249,7 @@ function sin() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.sin(txt1.innerHTML);
@@ -278,11 +277,11 @@ function cos() {
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -293,7 +292,7 @@ function cos() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.cos(txt1.innerHTML);
@@ -321,11 +320,11 @@ function tan() {
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -336,7 +335,7 @@ function tan() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.tan(txt1.innerHTML);
@@ -364,11 +363,11 @@ function exp() {//function of e^x
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -379,7 +378,7 @@ function exp() {//function of e^x
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.exp(txt1.innerHTML);
@@ -407,8 +406,32 @@ function xxx() {//x^2 function
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
+    }
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            txt1.innerHTML=content*content;
+            txt.innerHTML = "(" + content + ")^2";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            txt1.innerHTML=content*content;
+            txt.innerHTML = "(" + content + ")^2";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
     }
     else {
         var content = txt.innerHTML;
@@ -426,8 +449,44 @@ function xxxx(){//x! function
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
+    }
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            var numbers = parseInt(content);
+            var result = 1;
+            while (numbers > 1) {
+                result = result * numbers * (--numbers);
+                numbers--;
+            }
+            txt.innerHTML = content + "!";
+            txt1.innerHTML = result;
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            var numbers = parseInt(content);
+            var result = 1;
+            while (numbers > 1) {
+                result = result * numbers * (--numbers);
+                numbers--;
+            }
+            txt.innerHTML = content + "!";
+            txt1.innerHTML = result;
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
     }
     else {
         var content = txt.innerHTML;
@@ -451,11 +510,11 @@ function log10() {//function of ln
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -466,7 +525,7 @@ function log10() {//function of ln
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.log(txt1.innerHTML);
@@ -494,11 +553,11 @@ function sqrt() {
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -509,7 +568,7 @@ function sqrt() {
             changegreen();
         }
     }
-    else if(txt.innerHTML.match(strjudge[1])!=null) {
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
         if (txt1.innerHTML.length > 0) {
             var content = txt1.innerHTML;
             txt1.innerHTML = Math.sqrt(txt1.innerHTML);
@@ -537,8 +596,46 @@ function twox(){//function of 2^x
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){
+    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
         alert("Please reset and continue");
+    }
+    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
+        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+            alert("Please check your syntax");
+        }
+        else {
+            var content = txt.innerHTML.match(strjudge[3]);
+            var num = content;
+            var count = 0;
+            var numbers = 1;
+            while (count < num) {
+                numbers *= 2;
+                count++;
+            }
+            txt1.innerHTML = numbers;
+            txt.innerHTML = "2^(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+    }
+    else if(txt.innerHTML.match(strjudge[1])!=null) {//check if there is + - * / in main screen
+        if (txt1.innerHTML.length > 0) {
+            var content = txt1.innerHTML;
+            var num = content;
+            var count = 0;
+            var numbers = 1;
+            while (count < num) {
+                numbers *= 2;
+                count++;
+            }
+            txt1.innerHTML = numbers;
+            txt.innerHTML = "2^(" + content + ")";
+            number[j] = txt1.innerHTML;
+            changegreen();
+        }
+        else {
+            alert("Please check your syntax");
+        }
     }
     else {
         var content = txt.innerHTML;
