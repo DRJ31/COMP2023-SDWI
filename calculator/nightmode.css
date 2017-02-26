@@ -15,6 +15,8 @@
     height:150px;
     box-shadow: 0px 5px 20px #ccc;
     overflow-y: hidden;
+    background-color: #333;
+    color: white;
 }
 
 .button{/*style of buttons*/
@@ -22,22 +24,22 @@
     float: left;
     font-family: Consolas;
     height: 50px;
-    background-color: white;
+    background-color:#333;
     font-size: 30px;
     transition: 0.2s;
     outline: none;
-    box-shadow: 0px 5px 20px #ddd;
+    box-shadow: 0px 1px 5px #000;
     border: none;
+    color: #fff;
 }
 .greybg{/*background of high class function*/
-    background-color: #eee;
+    background-color: #333;
 }
 .blue{/*blue font color button*/
-    color: deepskyblue;
-    background-color: #f7f7f7;
+    color: #908b7f;
 }
 .equal{/*style of equal button*/
-    background-color: #78c357;
+    background-color: #3eb8eb;
     color: white;
 }
 .sbutton{/*style of arrow button*/
@@ -45,10 +47,9 @@
     width: 25%;
     float: left;
     font-family: Consolas;
-    margin-bottom: 2px;
     height: 50px;
-    color: deepskyblue;
-    background-color: white;
+    color: #908b7f;
+    background-color: #333;
     font-size: 30px;
     transition: 0.2s;
     outline: none;
@@ -66,14 +67,14 @@
 }
 /*change button's color when click*/
 .button:active,.sbutton:active{
-    background-color: rgba(171,221,243,0.3);
+    background-color: #666;
 }
 
 .button:visited,.sbutton:visited{
-    background-color: white;
+    background-color: #333;
 }
 .equal:active{
-    background-color: #549d34;
+    background-color: #00f;
 }
 #above{/*calculate screen*/
     width: 90%;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#ffffff">
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" id="style">
     <script src="calculator.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 </head>
@@ -15,6 +15,7 @@
  <div id="screen"><div id="above"></div><div id="bottom"></div></div>
     <!--button part-->
     <div class="buttoncontainer">
+        <button class="sbutton" id="changemod" onclick="changemod();shake(100)">Night</button>
         <button class="sbutton" onclick="larrow();shake(100)">←</button>
         <button class="sbutton" onclick="rarrow();shake(100)">→</button>
         <button class="sbutton" onclick="backspace();shake(100)">&Larr;</button>

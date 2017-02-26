@@ -1,6 +1,28 @@
 var number=[];//array about all your results
 var j=0;//to count array number
 var k=0;//arrow counter
+var day=new Date();
+var hour=day.getHours();
+var css=document.getElementById("style");
+if(hour>=21||hour<=7){//change into night mode after 9:00 PM
+    night("nightmode.css");
+}
+function changemod(){
+    var css=document.getElementById("style");
+    var judge=css.href.match(/nightmod/g);
+    var word=document.getElementById("changemod");
+    if(judge!=null){
+        css.setAttribute("href","style.css");
+        word.innerHTML="Night";
+    }
+    else{
+        css.setAttribute("href","nightmode.css");
+        word.innerHTML="White";
+    }
+}
+function night(name){//change into night mode or normal mode
+    css.setAttribute("href",name);
+}
 window.onload=function() {//change height on screen of phone version
     var width=screen.width;
     var high = document.getElementById("screen").style;
@@ -11,7 +33,15 @@ window.onload=function() {//change height on screen of phone version
     else{
         high.height="150px";
     }
-}
+    var word=document.getElementById("changemod");
+    var judge=css.href.match(/nightmod/g);
+    if(judge!=null){
+        word.innerHTML="White";
+    }
+    else{
+        word.innerHTML="Night";
+    }
+};
 window.onresize=function() {//change height of screen
     var width=screen.width;
     var high = document.getElementById("screen").style;
@@ -22,7 +52,7 @@ window.onresize=function() {//change height of screen
     else{
         high.height="150px";
     }
-}
+};
 function mainjudge(){//regexp
     var strjudge=[];
     strjudge[0]=/[a-z\^√!]/g;//judge if there are English letters in string
@@ -93,21 +123,27 @@ function backspace(){//function of backspace button
 function equal() {//calculate function
     var result=findscreen()[0];
     var result2=findscreen()[1];
+    var judge1=css.href.match(/nightmod/g);
     var judge=(result.innerHTML!="");
+    if(judge==true) {
     var result1=eval(result.innerHTML);
     result.style.height="40px";
     result.style.fontSize="30px";
     result.style.color="#ccc";
     result2.style.height="90px";
     result2.style.fontSize="60px";
-    result2.style.color="#78c357";
+    if(judge1!=null){
+        result2.style.color="deepskyblue";
+    }
+    else{
+        result2.style.color="#78c357";
+    }
     result2.innerHTML=result1;
-    if(judge==true) {
+
         number[j] = result2.innerHTML;
         j++;
         k=j;
     }
-    console.log(number);
 }
 function resetit() {//function on AC
     number=[];
@@ -164,6 +200,7 @@ function rarrow() {//right arrow function
 function changegreen() {//change result into green
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
+    var judge=css.href.match(/nightmod/g);
     j++;
     k = j;
     txt.style.height = "40px";
@@ -171,17 +208,28 @@ function changegreen() {//change result into green
     txt.style.fontSize = "30px";
     txt1.style.height = "90px";
     txt1.style.fontSize = "60px";
-    txt1.style.color = "#78c357";
+    if(judge!=null){
+        txt1.style.color="deepskyblue";
+    }
+    else{
+        txt1.style.color="#78c357";
+    }
 }
 function changeblack() {//change #above into black
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
+    var judge=css.href.match(/nightmod/g);
     txt.style.height="90px";
-    txt.style.color="black";
     txt.style.fontSize="60px";
     txt1.style.height="40px";
     txt1.style.fontSize="30px";
     txt1.style.color="#ccc";
+    if(judge!=null){
+        txt.style.color="white";
+    }
+    else{
+        txt.style.color="black";
+    }
 }
 //high class function begin from here
 function log() {
