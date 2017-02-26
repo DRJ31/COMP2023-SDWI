@@ -218,7 +218,7 @@ function log() {
 function sin() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -249,7 +249,7 @@ function sin() {
 function cos() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -280,7 +280,7 @@ function cos() {
 function tan() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -311,7 +311,7 @@ function tan() {
 function exp() {//function of e^x
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -342,7 +342,7 @@ function exp() {//function of e^x
 function xxx() {//x^2 function
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -373,7 +373,7 @@ function xxx() {//x^2 function
 function xxxx(){//x! function
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -416,7 +416,7 @@ function xxxx(){//x! function
 function log10() {//function of ln
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -447,7 +447,7 @@ function log10() {//function of ln
 function sqrt() {
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
@@ -478,7 +478,7 @@ function sqrt() {
 function twox(){//function of 2^x
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-        var strjudge=mainjudge();
+    var strjudge=mainjudge();
     if(txt.innerHTML.length==0){
         alert("Please input numbers");
     }
