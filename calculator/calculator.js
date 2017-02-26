@@ -13,12 +13,12 @@ function changemod(){//change css while press button
     var word=document.getElementById("changemod");
     if(judge!=null){
         css.setAttribute("href","style.css");
-        theme.setAttribute("content","#333");
+        theme.setAttribute("content","#fff");
         word.innerHTML="Night";
     }
     else{
         css.setAttribute("href","nightmode.css");
-        theme.setAttribute("content","#fff");
+        theme.setAttribute("content","#333");
         word.innerHTML="White";
     }
 }
