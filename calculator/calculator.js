@@ -61,7 +61,6 @@ function scrolltoright() {//keep input screen always display the last element
     var scroll=document.getElementById("above");
     var wide=scroll.scrollWidth;
     scroll.scrollLeft=wide;
-    console.log(scroll.scrollLeft);
 }
 function mainjudge(){//regexp
     var strjudge=[];
@@ -77,12 +76,30 @@ function findscreen(){//get elements of calculator screen
     arr[1]=document.getElementById("bottom");
     return arr;
 }
-
+function checkit(){//check ()
+    var txt=findscreen()[0];
+    var match1=txt.innerHTML.match(/\(/g);
+    var match2=txt.innerHTML.match(/\)/g);
+    if(match1==null&&match2==null){
+        return false;
+    }
+    else if(match1==null&&match2!=null){
+        return true;
+    }
+    else if(match2==null&&match1!=null){
+        return true;
+    }
+    else if(match1.length==match2.length){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 function main(element) {//function of buttons
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var strjudge=mainjudge();
-    changeblack();
     var judge=element=="+"||element=="-"||element=="*"||element=="/";
     if(txt.innerHTML.match(strjudge[0])==null){
         txt.innerHTML+=element;
@@ -90,7 +107,8 @@ function main(element) {//function of buttons
     else if(txt.innerHTML.match(strjudge[0])!=null&&judge==true){
         txt.innerHTML=txt1.innerHTML+element;
     }
-    if(judge==false){
+    var check=checkit();
+    if(judge==false&&check==false){
         txt1.innerHTML=eval(txt.innerHTML);
     }
     else{
@@ -98,8 +116,8 @@ function main(element) {//function of buttons
     }
     if(txt1.innerHTML=="undefined"){
         txt1.innerHTML=number[j-1];
-        console.log(number);
     }
+    changeblack();
 }
 function shake(time){//your phone will shake if it is an android phone with chrome when you press button
     if(navigator.vibrate){
@@ -114,21 +132,22 @@ function backspace(){//function of backspace button
     var txt1=findscreen()[1];
     var strjudge=mainjudge();
     var txtarr=txt.innerHTML.split("");
-    changeblack();
     txtarr.splice(txtarr.length-1,1);
     txt.innerHTML=txtarr.join("");
+    var check=checkit();
     if(txt.innerHTML.match(strjudge[0])!=null){
         txt1.innerHTML="";
     }
     else if(txt.innerHTML.length==0){
         txt1.innerHTML="";
     }
-    else if(txt.innerHTML.match(strjudge[2])==null){
+    else if(txt.innerHTML.match(strjudge[2])==null&&check==false){
         txt1.innerHTML=eval(txt.innerHTML);
     }
     else{
         txt1.innerHTML="";
     }
+    changeblack();
 }
 function equal() {//calculate function
     var result=findscreen()[0];
