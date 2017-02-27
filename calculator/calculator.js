@@ -57,10 +57,11 @@ window.onresize=function() {//change height of screen while resize the screen
         high.height="150px";
     }
 };
-function scrollleft() {
+function scrolltoright() {//keep input screen always display the last element
     var scroll=document.getElementById("above");
-    console.log(scroll);
-    window.scrollTo(scroll.scrollLeft,0);
+    var wide=scroll.clientWidth;
+    var wide1=scroll.scrollWidth;
+    scroll.scrollLeft=wide1-wide;
 }
 function mainjudge(){//regexp
     var strjudge=[];
@@ -81,6 +82,7 @@ function main(element) {//function of buttons
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var strjudge=mainjudge();
+    changeblack();
     var judge=element=="+"||element=="-"||element=="*"||element=="/";
     if(txt.innerHTML.match(strjudge[0])==null){
         txt.innerHTML+=element;
@@ -98,7 +100,6 @@ function main(element) {//function of buttons
         txt1.innerHTML=number[j-1];
         console.log(number);
     }
-    changeblack();
 }
 function shake(time){//your phone will shake if it is an android phone with chrome when you press button
     if(navigator.vibrate){
@@ -208,6 +209,7 @@ function rarrow() {//right arrow function
 function changegreen() {//change result into green
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
+    scrolltoright();
     var judge=css.href.match(/nightmod/g);
     j++;
     k = j;
@@ -226,6 +228,7 @@ function changegreen() {//change result into green
 function changeblack() {//change #above into black
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
+    scrolltoright();
     var judge=css.href.match(/nightmod/g);
     txt.style.height="80px";
     txt.style.fontSize="50px";
