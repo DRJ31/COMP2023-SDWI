@@ -57,6 +57,11 @@ window.onresize=function() {//change height of screen while resize the screen
         high.height="150px";
     }
 };
+function scrollleft() {
+    var scroll=document.getElementById("above");
+    console.log(scroll);
+    window.scrollTo(scroll.scrollLeft,0);
+}
 function mainjudge(){//regexp
     var strjudge=[];
     strjudge[0]=/[a-z\^√!]/g;//judge if there are English letters in string
@@ -108,6 +113,7 @@ function backspace(){//function of backspace button
     var txt1=findscreen()[1];
     var strjudge=mainjudge();
     var txtarr=txt.innerHTML.split("");
+    changeblack();
     txtarr.splice(txtarr.length-1,1);
     txt.innerHTML=txtarr.join("");
     if(txt.innerHTML.match(strjudge[0])!=null){
@@ -122,7 +128,6 @@ function backspace(){//function of backspace button
     else{
         txt1.innerHTML="";
     }
-    changeblack();
 }
 function equal() {//calculate function
     var result=findscreen()[0];
@@ -131,11 +136,11 @@ function equal() {//calculate function
     var judge=(result.innerHTML!="");
     if(judge==true) {
         var result1=eval(result.innerHTML);
-        result.style.height="40px";
+        result.style.height="50px";
         result.style.fontSize="30px";
         result.style.color="#ccc";
-        result2.style.height="90px";
-        result2.style.fontSize="60px";
+        result2.style.height="80px";
+        result2.style.fontSize="50px";
         if(judge1!=null){
             result2.style.color="deepskyblue";
         }
@@ -206,11 +211,11 @@ function changegreen() {//change result into green
     var judge=css.href.match(/nightmod/g);
     j++;
     k = j;
-    txt.style.height = "40px";
+    txt.style.height = "50px";
     txt.style.color = "#ccc";
     txt.style.fontSize = "30px";
-    txt1.style.height = "90px";
-    txt1.style.fontSize = "60px";
+    txt1.style.height = "80px";
+    txt1.style.fontSize = "50px";
     if(judge!=null){
         txt1.style.color="deepskyblue";
     }
@@ -222,9 +227,9 @@ function changeblack() {//change #above into black
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
     var judge=css.href.match(/nightmod/g);
-    txt.style.height="90px";
-    txt.style.fontSize="60px";
-    txt1.style.height="40px";
+    txt.style.height="80px";
+    txt.style.fontSize="50px";
+    txt1.style.height="50px";
     txt1.style.fontSize="30px";
     txt1.style.color="#ccc";
     if(judge!=null){
