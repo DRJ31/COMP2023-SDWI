@@ -74,7 +74,7 @@
     background-color: #333;
 }
 .equal:active{
-    background-color: #00f;
+    background-color: royalblue;
 }
 #above{/*calculate screen*/
     width: 90%;

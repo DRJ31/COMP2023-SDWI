@@ -5,7 +5,7 @@ var day=new Date();
 var hour=day.getHours();//get hour of now
 var css=document.getElementById("style");
 var theme=document.getElementById("theme");
-if(hour>=21||hour<=7){//change into night mode after 9:00 PM
+if(hour>=19||hour<7){//change into night mode after 9:00 PM
     night("nightmode.css");
 }
 function changemod(){//change css while press button
@@ -59,9 +59,9 @@ window.onresize=function() {//change height of screen while resize the screen
 };
 function scrolltoright() {//keep input screen always display the last element
     var scroll=document.getElementById("above");
-    var wide=scroll.clientWidth;
-    var wide1=scroll.scrollWidth;
-    scroll.scrollLeft=wide1-wide;
+    var wide=scroll.scrollWidth;
+    scroll.scrollLeft=wide;
+    console.log(scroll.scrollLeft);
 }
 function mainjudge(){//regexp
     var strjudge=[];
@@ -209,7 +209,6 @@ function rarrow() {//right arrow function
 function changegreen() {//change result into green
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-    scrolltoright();
     var judge=css.href.match(/nightmod/g);
     j++;
     k = j;
@@ -224,11 +223,11 @@ function changegreen() {//change result into green
     else{
         txt1.style.color="#78c357";
     }
+    scrolltoright();
 }
 function changeblack() {//change #above into black
     var txt=findscreen()[0];
     var txt1=findscreen()[1];
-    scrolltoright();
     var judge=css.href.match(/nightmod/g);
     txt.style.height="80px";
     txt.style.fontSize="50px";
@@ -241,6 +240,7 @@ function changeblack() {//change #above into black
     else{
         txt.style.color="black";
     }
+    scrolltoright();
 }
 //high class function begin from here
 function log() {

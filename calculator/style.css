@@ -83,7 +83,6 @@
     padding-right: 5%;
     padding-top: 10px;
     overflow-x: auto;
-    overflow-y: visible;
     transition: 0.2s;
     white-space: nowrap;
 }
