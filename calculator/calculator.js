@@ -11,15 +11,18 @@ if(hour>=19||hour<7){//change into night mode after 7:00 PM
 function changemod(){//change css while press button
     var judge=css.href.match(/nightmod/g);
     var word=document.getElementById("changemod");
+    var txt=findscreen()[0];
     if(judge!=null){
         css.setAttribute("href","style.css");
         theme.setAttribute("content","#fff");
         word.innerHTML="Night";
+        txt.color="black";
     }
     else{
         css.setAttribute("href","nightmode.css");
         theme.setAttribute("content","#333");
         word.innerHTML="White";
+        txt.color="white";
     }
 }
 function night(name){//change into night mode or normal mode
