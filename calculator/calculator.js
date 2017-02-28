@@ -16,13 +16,13 @@ function changemod(){//change css while press button
         css.setAttribute("href","style.css");
         theme.setAttribute("content","#fff");
         word.innerHTML="Night";
-        txt.color="black";
+        txt.style.color="black";
     }
     else{
         css.setAttribute("href","nightmode.css");
         theme.setAttribute("content","#333");
         word.innerHTML="White";
-        txt.color="white";
+        txt.style.color="white";
     }
 }
 function night(name){//change into night mode or normal mode
