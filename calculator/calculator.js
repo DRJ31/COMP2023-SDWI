@@ -19,7 +19,7 @@ function changemod(){//change css while press button
         word.innerHTML="Night";
         txt.color="black";
         if(txt1.color=="deepskyblue"){
-            txt1.color=="#78c357";
+            txt1.color="#78c357";
         }
     }
     else{
@@ -27,8 +27,8 @@ function changemod(){//change css while press button
         theme.setAttribute("content","#333");
         word.innerHTML="White";
         txt.color="white";
-        if(txt1.color=="#78c357"){
-            txt1.color=="deepskyblue";
+        if(txt1.fontSize=="50px"){
+            txt1.color="deepskyblue";
         }
     }
 }
