@@ -5,7 +5,7 @@ var day=new Date();
 var hour=day.getHours();//get hour of now
 var css=document.getElementById("style");
 var theme=document.getElementById("theme");
-if(hour>=19||hour<7){//change into night mode after 9:00 PM
+if(hour>=19||hour<7){//change into night mode after 7:00 PM
     night("nightmode.css");
 }
 function changemod(){//change css while press button
