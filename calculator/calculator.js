@@ -17,8 +17,10 @@ function changemod(){//change css while press button
         css.setAttribute("href","style.css");
         theme.setAttribute("content","#fff");
         word.innerHTML="Night";
+        if(txt.fontSize=="50px"){
         txt.color="black";
-        if(txt1.fontSize=="50px"){
+        }
+        else if(txt1.fontSize=="50px"){
             txt1.color="#78c357";
         }
     }
@@ -26,8 +28,10 @@ function changemod(){//change css while press button
         css.setAttribute("href","nightmode.css");
         theme.setAttribute("content","#333");
         word.innerHTML="White";
+       if(txt.fontSize=="50px"){
         txt.color="white";
-        if(txt1.fontSize=="50px"){
+       }
+        else if(txt1.fontSize=="50px"){
             txt1.color="deepskyblue";
         }
     }
