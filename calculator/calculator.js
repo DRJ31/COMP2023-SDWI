@@ -18,7 +18,7 @@ function changemod(){//change css while press button
         theme.setAttribute("content","#fff");
         word.innerHTML="Night";
         txt.color="black";
-        if(txt1.color=="deepskyblue"){
+        if(txt1.fontSize=="50px"){
             txt1.color="#78c357";
         }
     }
