@@ -118,6 +118,7 @@ function main(element) {//function of buttons
         txt1.innerHTML=number[j-1];
     }
     changeblack();
+    scrolltoright();
 }
 function shake(time){//your phone will shake if it is an android phone with chrome when you press button
     if(navigator.vibrate){
@@ -148,6 +149,7 @@ function backspace(){//function of backspace button
         txt1.innerHTML="";
     }
     changeblack();
+    scrolltoright();
 }
 function equal() {//calculate function
     var result=findscreen()[0];
@@ -242,7 +244,6 @@ function changegreen() {//change result into green
     else{
         txt1.style.color="#78c357";
     }
-    scrolltoright();
 }
 function changeblack() {//change #above into black
     var txt=findscreen()[0];
@@ -259,7 +260,6 @@ function changeblack() {//change #above into black
     else{
         txt.style.color="black";
     }
-    scrolltoright();
 }
 //high class function begin from here
 function log() {
