@@ -244,6 +244,7 @@ function changegreen() {//change result into green
     else{
         txt1.style.color="#78c357";
     }
+    txt.scrollLeft=0;
 }
 function changeblack() {//change #above into black
     var txt=findscreen()[0];
