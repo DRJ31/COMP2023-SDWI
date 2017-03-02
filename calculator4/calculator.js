@@ -1,251 +1,274 @@
-var number=[];//array about all your results
-var j=0;//to count array number
-var k=0;//arrow counter
-var day=new Date();
-var hour=day.getHours();//get hour of now
-var css=document.getElementById("style");
-var theme=document.getElementById("theme");
-if(hour>=19||hour<7){//change into night mode after 7:00 PM
-    night("nightmode.css");
-}
-function changemod(){//change css while press button
-    var judge=css.href.match(/nightmod/g);
-    var word=document.getElementById("changemod");
-    var txt=findscreen()[0].style;
-    var txt1=findscreen()[1].style;
-    if(judge!=null){
-        css.setAttribute("href","style.css");
-        theme.setAttribute("content","#fff");
-        word.innerHTML="Night";
-        if(txt.fontSize=="50px"){
-        txt.color="black";
+var number = [];//array about all your results
+var j = 0;//to count array number
+var k = 0;//arrow counter
+var day = new Date();
+var hour = day.getHours();//get hour of now
+var css = document.getElementById("style");
+var theme = document.getElementById("theme");
+ if (hour >= 19 || hour < 7) {//change into night mode after 7:00 PM
+   night("nightmode.css");
+ }
+function changemod() {//change css while press button
+    var judge = css.href.match(/nightmod/g);
+    var word = document.getElementById("changemod");
+    var txt = findscreen()[0].style;
+    var txt1 = findscreen()[1].style;
+    if (judge != null) {
+        css.setAttribute("href", "style.css");
+        theme.setAttribute("content", "#fff");
+        word.innerHTML = "Night";
+        if (txt.fontSize == "50px") {
+            txt.color = "black";
         }
-        else if(txt1.fontSize=="50px"){
-            txt1.color="#78c357";
-        }
-    }
-    else{
-        css.setAttribute("href","nightmode.css");
-        theme.setAttribute("content","#333");
-        word.innerHTML="White";
-       if(txt.fontSize=="50px"){
-        txt.color="white";
-       }
-        else if(txt1.fontSize=="50px"){
-            txt1.color="deepskyblue";
+        else if (txt1.fontSize == "50px") {
+            txt1.color = "#78c357";
         }
     }
+    else {
+        css.setAttribute("href", "nightmode.css");
+        theme.setAttribute("content", "#333");
+        word.innerHTML = "White";
+        if (txt.fontSize == "50px") {
+            txt.color = "white";
+        }
+        else if (txt1.fontSize == "50px") {
+            txt1.color = "deepskyblue";
+        }
+    }
 }
-function hundred(){//calculate sum of 1+...+100
-    var result=0;
-    for(var i=1;i<=100;i++){
-        result+=i;
+function hundred() {//calculate sum of 1+...+100
+    var result = 0;
+    for (var i = 1; i <= 100; i++) {
+        result += i;
     }
     document.write(result);
 }
-function sumdiv(num){//show or hide sum div
-    var element=document.getElementById("sum").style;
-    element.width=num;
-    element.height=num;
+function sumdiv(num) {//show or hide sum div
+    var element = document.getElementById("sum").style;
+    element.width = num;
+    element.height = num;
 }
-function logo(){//logo before calculator show
-    document.getElementById('center').style.display='none';
-    document.getElementById('cover').style.backgroundColor='rgba(0,0,0,0)';
-    setTimeout("document.getElementById('cover').style.zIndex='-1';",200);
+function logo() {//logo before calculator show
+    document.getElementById('center').style.display = 'none';
+    document.getElementById('cover').style.backgroundColor = 'rgba(0,0,0,0)';
+    setTimeout("document.getElementById('cover').style.zIndex='-1';", 200);
 }
-function night(name){//change into night mode or normal mode
-    css.setAttribute("href",name);
-    theme.setAttribute("content","#333");
+function night(name) {//change into night mode or normal mode
+    css.setAttribute("href", name);
+    theme.setAttribute("content", "#333");
 }
-window.onload=function() {//change height of screen in phone version
-    setTimeout(logo,2000);//logo
-    var width=screen.width;
+window.onload = function () {//change height of screen in phone version
+    setTimeout(logo, 2000);//logo
+    var width = screen.width;
     var high = document.getElementById("screen").style;
     if (width < 768) {
-        var tall=screen.height-450;
-        high.height=tall+"px";
+        var tall = screen.height - 450;
+        high.height = tall + "px";
     }
-    else{
-        high.height="150px";
+    else {
+        high.height = "150px";
     }
     //change words while css changes
-    var word=document.getElementById("changemod");
-    var judge=css.href.match(/nightmod/g);
-    if(judge!=null){
-        word.innerHTML="White";
+    var word = document.getElementById("changemod");
+    var judge = css.href.match(/nightmod/g);
+    if (judge != null) {
+        word.innerHTML = "White";
     }
-    else{
-        word.innerHTML="Night";
+    else {
+        word.innerHTML = "Night";
     }
 };
-window.onresize=function() {//change height of screen while resize the screen
-    var width=screen.width;
+window.onresize = function () {//change height of screen while resize the screen
+    var width = screen.width;
     var high = document.getElementById("screen").style;
     if (width < 768) {
-        var tall=screen.height-450;
-        high.height=tall+"px";
+        var tall = screen.height - 450;
+        high.height = tall + "px";
     }
-    else{
-        high.height="150px";
+    else {
+        high.height = "150px";
     }
 };
 function scrolltoright() {//keep input screen always display the last element
-    var scroll=document.getElementById("above");
-    var wide=scroll.scrollWidth;
-    scroll.scrollLeft=wide;
+    var scroll = document.getElementById("above");
+    var wide = scroll.scrollWidth;
+    scroll.scrollLeft = wide;
 }
-function mainjudge(){//regexp
-    var strjudge=[];
-    strjudge[0]=/[a-z\^√!]/g;//judge if there are English letters in string
-    strjudge[1]=/[\+\-\*\/]/g;//judge if there are + - * / in string
-    strjudge[2]=/[\+\-\*\/]$/g;//judge if + - * / is the last element of string
-    strjudge[3]=/.*[^\+\-\*\/]/g;//get elements before if the last element is + - * /
+function mainjudge() {//regexp
+    var strjudge = [];
+    strjudge[0] = /[a-z\^√!]/g;//judge if there are English letters in string
+    strjudge[1] = /[\+\-\*\/]/g;//judge if there are + - * / in string
+    strjudge[2] = /[\+\-\*\/]$/g;//judge if + - * / is the last element of string
+    strjudge[3] = /.*[^\+\-\*\/]/g;//get elements before if the last element is + - * /
     return strjudge;
 }
-function findscreen(){//get elements of calculator screen
-    var arr=[];
-    arr[0]=document.getElementById("above");
-    arr[1]=document.getElementById("bottom");
+function findscreen() {//get elements of calculator screen
+    var arr = [];
+    arr[0] = document.getElementById("above");
+    arr[1] = document.getElementById("bottom");
     return arr;
 }
-function checkit(){//check ()
-    var txt=findscreen()[0];
-    var match1=txt.innerHTML.match(/\(/g);
-    var match2=txt.innerHTML.match(/\)/g);
-    if(match1==null&&match2==null){
+function checkit() {//check ()
+    var txt = findscreen()[0];
+    var match1 = txt.innerHTML.match(/\(/g);
+    var match2 = txt.innerHTML.match(/\)/g);
+    if (match1 == null && match2 == null) {
         return false;
     }
-    else if(match1==null&&match2!=null){
+    else if (match1 == null && match2 != null) {
         return true;
     }
-    else if(match2==null&&match1!=null){
+    else if (match2 == null && match1 != null) {
         return true;
     }
-    else if(match1.length==match2.length){
+    else if (match1.length == match2.length) {
         return false;
     }
-    else{
+    else {
         return true;
     }
 }
+
 function main(element) {//function of buttons
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    var judge=element=="+"||element=="-"||element=="*"||element=="/";
-    if(txt.innerHTML.match(strjudge[0])==null){
-        txt.innerHTML+=element;
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    var judge = element == "+" || element == "-" || element == "*" || element == "/";
+    if (txt.innerHTML.match(strjudge[2]) != null&&judge==true) {//last element is + - * /
+        var str = txt.innerHTML.split("");
+        str.splice(str.length-1, 1);
+        str = str.join("");
+        txt.innerHTML = str + element;
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null&&judge==true){
-        txt.innerHTML=txt1.innerHTML+element;
+    else if (txt.innerHTML.match(strjudge[0]) == null) {//only number and + - * /
+        txt.innerHTML += element;
     }
-    var check=checkit();
-    if(judge==false&&check==false){
-        txt1.innerHTML=eval(txt.innerHTML);
+    else if (txt.innerHTML.match(strjudge[0]) != null && judge == true) {
+        txt.innerHTML = txt1.innerHTML + element;
     }
-    else{
-        txt1.innerHTML="";
+    var check = checkit();//check ()
+    if (judge == false && check == false) {//no () and + - * /
+        txt1.innerHTML = eval(txt.innerHTML);
     }
-    if(txt1.innerHTML=="undefined"){
-        txt1.innerHTML=number[j-1];
+    else {
+        txt1.innerHTML = "";
+    }
+    if (txt1.innerHTML == "undefined") {
+        txt1.innerHTML = number[j - 1];
     }
     changeblack();
     scrolltoright();
 }
-function shake(time){//your phone will shake if it is an android phone with chrome when you press button
-    if(navigator.vibrate){
+function shake(time) {//your phone will shake if it is an android phone with chrome when you press button
+    if (navigator.vibrate) {
         navigator.vibrate(time);
     }
-    else if(navigator.webkitVibrate){
+    else if (navigator.webkitVibrate) {
         navigator.webkitVibrate(time);
     }
 }
-function backspace(){//function of backspace button
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    var txtarr=txt.innerHTML.split("");
-    txtarr.splice(txtarr.length-1,1);
-    txt.innerHTML=txtarr.join("");
-    var check=checkit();
-    if(txt.innerHTML.match(strjudge[0])!=null){
-        txt1.innerHTML="";
+function backspace() {//function of backspace button
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    var txtarr = txt.innerHTML.split("");
+    txtarr.splice(txtarr.length - 1, 1);
+    txt.innerHTML = txtarr.join("");
+    var check = checkit();
+    if (txt.innerHTML.match(strjudge[0]) != null) {
+        txt1.innerHTML = "";
     }
-    else if(txt.innerHTML.length==0){
-        txt1.innerHTML="";
+    else if (txt.innerHTML.length == 0) {
+        txt1.innerHTML = "";
     }
-    else if(txt.innerHTML.match(strjudge[2])==null&&check==false){
-        txt1.innerHTML=eval(txt.innerHTML);
+    else if (txt.innerHTML.match(strjudge[2]) == null && check == false) {
+        txt1.innerHTML = eval(txt.innerHTML);
     }
-    else{
-        txt1.innerHTML="";
+    else {
+        txt1.innerHTML = "";
     }
     changeblack();
     scrolltoright();
 }
 function equal() {//calculate function
-    var result=findscreen()[0];
-    var result2=findscreen()[1];
-    var judge1=css.href.match(/nightmod/g);
-    var judge=(result.innerHTML!="");
-    if(judge==true) {
-        var result1=eval(result.innerHTML);
-        result.style.height="50px";
-        result.style.fontSize="30px";
-        result.style.color="#ccc";
-        result2.style.height="80px";
-        result2.style.fontSize="50px";
-        if(judge1!=null){
-            result2.style.color="deepskyblue";
+    var result = findscreen()[0];
+    var result2 = findscreen()[1];
+    var judge1 = css.href.match(/nightmod/g);
+    var judge = (result.innerHTML != "");
+    if (judge == true) {
+        var result1 = eval(result.innerHTML);
+        result.style.height = "50px";
+        result.style.fontSize = "30px";
+        result.style.color = "#ccc";
+        result2.style.height = "80px";
+        result2.style.fontSize = "50px";
+        if (judge1 != null) {
+            result2.style.color = "deepskyblue";
         }
-        else{
-            result2.style.color="#78c357";
+        else {
+            result2.style.color = "#78c357";
         }
-        result2.innerHTML=result1;
+        result2.innerHTML = result1;
         number[j] = result2.innerHTML;
         j++;
-        k=j;
+        k = j;
     }
 }
 function resetit() {//function on AC
-    number=[];
-    j=0;
-    k=0;
+    number = [];
+    j = 0;
+    k = 0;
     changeblack();
-    var content=findscreen()[0];
-    var content1=findscreen()[1];
-    content.innerHTML="";
-    content1.innerHTML="";
+    var content = findscreen()[0];
+    var content1 = findscreen()[1];
+    content.innerHTML = "";
+    content1.innerHTML = "";
 }
 
 function clean() {//ce function
-    var content=findscreen()[0];
-    var content1=findscreen()[1];
+    var content = findscreen()[0];
+    var content1 = findscreen()[1];
     changeblack();
-    content.innerHTML="";
-    content1.innerHTML="";
+    content.innerHTML = "";
+    content1.innerHTML = "";
 }
 
 function larrow() {//left arrow function
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    txt1.innerHTML="";
-    if(number.length==0){
-        txt.innerHTML="";
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    txt1.innerHTML = "";
+    if (number.length == 0) {
+        txt.innerHTML = "";
     }
-    else if(k>0&&number[k-1].length>0){
+    else if (k > 0 && number[k - 1].length > 0) {
         k--;
-        txt.innerHTML=number[k];
+        txt.innerHTML = number[k];
     }
-    else if(number[0].length>0){
-        txt.innerHTML=number[0];
+    else if (number[0].length > 0) {
+        txt.innerHTML = number[0];
+    }
+    changeblack();
+}
+function rarrow() {//right arrow function
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    txt1.innerHTML = "";
+    if (txt.innerHTML == 0) {
+        txt.innerHTML = "";
+    }
+    else if (k < number.length - 1) {
+        k++;
+        txt.innerHTML = number[k];
+    }
+    else if (number[0].length > 0) {
+        txt.innerHTML = number[number.length - 1];
     }
     changeblack();
 }
 function changegreen() {//change result into green
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var judge=css.href.match(/nightmod/g);
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var judge = css.href.match(/nightmod/g);
     j++;
     k = j;
     txt.style.height = "50px";
@@ -253,43 +276,43 @@ function changegreen() {//change result into green
     txt.style.fontSize = "30px";
     txt1.style.height = "80px";
     txt1.style.fontSize = "50px";
-    if(judge!=null){
-        txt1.style.color="deepskyblue";
+    if (judge != null) {
+        txt1.style.color = "deepskyblue";
     }
-    else{
-        txt1.style.color="#78c357";
+    else {
+        txt1.style.color = "#78c357";
     }
-    txt.scrollLeft=0;
+    txt.scrollLeft = 0;
 }
 function changeblack() {//change #above into black
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var judge=css.href.match(/nightmod/g);
-    txt.style.height="80px";
-    txt.style.fontSize="50px";
-    txt1.style.height="50px";
-    txt1.style.fontSize="30px";
-    txt1.style.color="#ccc";
-    if(judge!=null){
-        txt.style.color="white";
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var judge = css.href.match(/nightmod/g);
+    txt.style.height = "80px";
+    txt.style.fontSize = "50px";
+    txt1.style.height = "50px";
+    txt1.style.fontSize = "30px";
+    txt1.style.color = "#ccc";
+    if (judge != null) {
+        txt.style.color = "white";
     }
-    else{
-        txt.style.color="black";
+    else {
+        txt.style.color = "black";
     }
 }
 //high class function begin from here
 function log() {
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -300,7 +323,7 @@ function log() {
             changegreen();
         }
     }
-    else{
+    else {
         var content = eval(txt.innerHTML);
         txt1.innerHTML = Math.log(content) / Math.log(10);
         txt.innerHTML = "log(" + txt.innerHTML + ")";
@@ -310,17 +333,17 @@ function log() {
 }
 
 function sin() {
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -341,17 +364,17 @@ function sin() {
 }
 
 function cos() {
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -372,17 +395,17 @@ function cos() {
 }
 
 function tan() {
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -403,17 +426,17 @@ function tan() {
 }
 
 function exp() {//function of e^x
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -434,22 +457,22 @@ function exp() {//function of e^x
 }
 
 function xxx() {//x^2 function
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
             var content = txt.innerHTML.match(strjudge[3]);
-            txt1.innerHTML=content*content;
+            txt1.innerHTML = content * content;
             txt.innerHTML = "(" + content + ")^2";
             number[j] = txt1.innerHTML;
             changegreen();
@@ -464,18 +487,18 @@ function xxx() {//x^2 function
     }
 }
 
-function xxxx(){//x! function
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+function xxxx() {//x! function
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -508,17 +531,17 @@ function xxxx(){//x! function
 }
 
 function log10() {//function of ln
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -539,17 +562,17 @@ function log10() {//function of ln
 }
 
 function sqrt() {
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
@@ -569,18 +592,18 @@ function sqrt() {
     }
 }
 
-function twox(){//function of 2^x
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    var strjudge=mainjudge();
-    if(txt.innerHTML.length==0){
+function twox() {//function of 2^x
+    var txt = findscreen()[0];
+    var txt1 = findscreen()[1];
+    var strjudge = mainjudge();
+    if (txt.innerHTML.length == 0) {
         alert("Please input numbers");
     }
-    else if(txt.innerHTML.match(strjudge[0])!=null){//check if there are letters in main screen
+    else if (txt.innerHTML.match(strjudge[0]) != null) {//check if there are letters in main screen
         alert("Please reset and continue");
     }
-    else if(txt.innerHTML.match(strjudge[2])!=null){//check if + - * / is the last element in string
-        if(txt.innerHTML.length==1&&txt.innerHTML.match(strjudge[1])!=null) {//check if + - * / is the only element in string
+    else if (txt.innerHTML.match(strjudge[2]) != null) {//check if + - * / is the last element in string
+        if (txt.innerHTML.length == 1 && txt.innerHTML.match(strjudge[1]) != null) {//check if + - * / is the only element in string
             alert("Please check your syntax");
         }
         else {
