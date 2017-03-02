@@ -1,3 +1,26 @@
+body{
+    margin: 0;
+}
+#cover{
+    position: absolute;
+    background-color: rgba(0,0,0,1);
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    transition: 0.2s;
+}
+#center{
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    position: absolute;
+    color: white;
+}
 .cal{/*calculator body*/
     width: 500px;
     height:600px;

@@ -1,3 +1,22 @@
+#cover{
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    transition: 0.2s;
+}
+#center{
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    position: absolute;
+}
 .cal{/*calculator body*/
     width: 500px;
     height:600px;
@@ -65,6 +84,9 @@
 }
 /*change button's color when click*/
 .button:active,.sbutton:active{
+    background-color: rgba(171,221,243,0.3);
+}
+.button:hover,.sbutton:hover{
     background-color: rgba(171,221,243,0.3);
 }
 

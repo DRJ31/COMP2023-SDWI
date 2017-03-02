@@ -36,11 +36,17 @@ function changemod(){//change css while press button
         }
     }
 }
+function logo(){//logo before calculator show
+    document.getElementById('center').style.display='none';
+    document.getElementById('cover').style.backgroundColor='rgba(0,0,0,0)';
+    document.getElementById('cover').style.zIndex='-1';
+}
 function night(name){//change into night mode or normal mode
     css.setAttribute("href",name);
     theme.setAttribute("content","#333");
 }
 window.onload=function() {//change height of screen in phone version
+    setTimeout(logo,2000);//logo
     var width=screen.width;
     var high = document.getElementById("screen").style;
     if (width < 768) {
