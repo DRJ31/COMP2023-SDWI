@@ -36,10 +36,22 @@ function changemod(){//change css while press button
         }
     }
 }
+function hundred(){//calculate sum of 1+...+100
+    var result=0;
+    for(var i=1;i<=100;i++){
+        result+=i;
+    }
+    document.write(result);
+}
+function sumdiv(num){//show or hide sum div
+    var element=document.getElementById("sum").style;
+    element.width=num;
+    element.height=num;
+}
 function logo(){//logo before calculator show
     document.getElementById('center').style.display='none';
     document.getElementById('cover').style.backgroundColor='rgba(0,0,0,0)';
-    document.getElementById('cover').style.zIndex='-1';
+    setTimeout("document.getElementById('cover').style.zIndex='-1';",200);
 }
 function night(name){//change into night mode or normal mode
     css.setAttribute("href",name);
@@ -227,23 +239,6 @@ function larrow() {//left arrow function
     }
     else if(number[0].length>0){
         txt.innerHTML=number[0];
-    }
-    changeblack();
-}
-
-function rarrow() {//right arrow function
-    var txt=findscreen()[0];
-    var txt1=findscreen()[1];
-    txt1.innerHTML="";
-    if(txt.innerHTML==0){
-        txt.innerHTML="";
-    }
-    else if(k<number.length-1){
-        k++;
-        txt.innerHTML=number[k];
-    }
-    else if(number[0].length>0){
-        txt.innerHTML=number[number.length-1];
     }
     changeblack();
 }

@@ -10,12 +10,18 @@
     <script src="calculator.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 </head>
-<body>
+<body><!--calculator logo-->
 <div id="cover">
     <div id="center">
         <img src="icon.ico" alt="">
         <h1>Calculator</h1>
     </div>
+</div>
+<!--sum for fun-->
+<div id="sum">
+    <img src="clear.png" style="height: 40px;float: right" alt="" onclick="sumdiv('0')">
+    <div id="sumresult">
+        <script>hundred()</script></div>
 </div>
 <div class="cal"><!--main calculator-->
     <!--screen part-->
@@ -24,7 +30,7 @@
     <div class="buttoncontainer">
         <button class="sbutton" id="changemod" onclick="changemod();shake(100)">Night</button>
         <button class="sbutton" onclick="larrow();shake(100)">←</button>
-        <button class="sbutton" onclick="rarrow();shake(100)" title="Sum for fun">Sum</button>
+        <button class="sbutton" onclick="sumdiv('300px');shake(100)" title="Sum for fun">Sum</button>
         <button class="sbutton" onclick="backspace();shake(100)">&Larr;</button>
         <button class="button greybg" onclick="log();shake(100)">log</button>
         <button class="button greybg" onclick="sin();shake(100)">sin</button>

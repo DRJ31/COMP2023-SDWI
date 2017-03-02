@@ -89,9 +89,6 @@ body{
 .button:active,.sbutton:active{
     background-color: rgba(171,221,243,0.3);
 }
-.button:hover,.sbutton:hover{
-    background-color: rgba(171,221,243,0.3);
-}
 
 .button:visited,.sbutton:visited{
     background-color: white;

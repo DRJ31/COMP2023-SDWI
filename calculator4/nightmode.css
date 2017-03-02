@@ -3,7 +3,7 @@ body{
 }
 #cover{
     position: absolute;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(51,51,51,1);
     height: 100%;
     width: 100%;
     z-index: 10;
@@ -77,6 +77,29 @@ body{
     transition: 0.2s;
     outline: none;
 }
+#sum{
+    position: absolute;
+    margin:auto;
+    left: 0;
+    right:0;
+    top:0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    background-color: white;
+    z-index: 10;
+    overflow: auto;
+    transition: 0.2s;
+}
+#sumresult{
+    text-align: center;
+    width: 90%;
+    height: 180px;
+    font-size: 70px;
+    line-height: 200px;
+    margin-left: 5%;
+    margin-top:40px;
+}
 .buttoncontainer{/*container of buttons*/
     width:100%;
     height: 450px;
@@ -92,11 +115,17 @@ body{
 .button:active,.sbutton:active{
     background-color: #666;
 }
+.button:hover,.sbutton:hover{
+    background-color: #666;
+}
 
 .button:visited,.sbutton:visited{
     background-color: #333;
 }
 .equal:active{
+    background-color: royalblue;
+}
+.equal:hover{
     background-color: royalblue;
 }
 #above{/*calculate screen*/
