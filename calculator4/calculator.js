@@ -98,8 +98,8 @@ function mainjudge() {//regexp
     var strjudge = [];
     strjudge[0] = /[a-z\^√!]/g;//judge if there are English letters in string
     strjudge[1] = /[\+\-\*\/]/g;//judge if there are + - * / in string
-    strjudge[2] = /[\+\-\*\/]$/g;//judge if + - * / is the last element of string
-    strjudge[3] = /.*[^\+\-\*\/]/g;//get elements before if the last element is + - * /
+    strjudge[2] = /[\+\-\*\/\.]$/g;//judge if + - * / is the last element of string
+    strjudge[3] = /.*[^\+\-\*\/\.]/g;//get elements before if the last element is + - * ./
     return strjudge;
 }
 function findscreen() {//get elements of calculator screen
@@ -133,11 +133,12 @@ function main(element) {//function of buttons
     var txt = findscreen()[0];
     var txt1 = findscreen()[1];
     var strjudge = mainjudge();
-    var judge = element == "+" || element == "-" || element == "*" || element == "/";
+    var judge = element == "+" || element == "-" || element == "*" || element == "/" || element==".";
     if (txt.innerHTML.match(strjudge[2]) != null&&judge==true) {//last element is + - * /
         var str = txt.innerHTML.split("");
         str.splice(str.length-1, 1);
         str = str.join("");
+        console.log(str);
         txt.innerHTML = str + element;
     }
     else if (txt.innerHTML.match(strjudge[0]) == null) {//only number and + - * /
