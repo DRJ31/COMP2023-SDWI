@@ -57,6 +57,7 @@ body{
     box-shadow: 0px 1px 5px #000;
     border: none;
     color: #fff;
+    cursor: pointer;
 }
 .sumbutton {
     width: 80%;
@@ -90,6 +91,7 @@ body{
     font-size: 30px;
     transition: 0.2s;
     outline: none;
+    cursor: pointer;
 }
 #sum{
     position: absolute;

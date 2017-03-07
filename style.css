@@ -178,6 +178,7 @@ p{
     padding-bottom: 10px;
     transition: 0.3s;
     text-align: center;
+    cursor: pointer;
 }
 
 @media(max-width: 767px){
@@ -209,6 +210,7 @@ p{
     transition: 0.3s;
     text-align: center;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .bottombutton{/*buttons at the bottom*/
@@ -222,6 +224,7 @@ p{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 .join{/*style of join company button*/
     color: deepskyblue;

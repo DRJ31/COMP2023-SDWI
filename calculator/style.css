@@ -50,6 +50,7 @@ body{
     outline: none;
     box-shadow: 0px 5px 20px #ddd;
     border: none;
+    cursor: pointer;
 }
 .greybg{/*background of high class function*/
     background-color: #eee;
@@ -73,6 +74,7 @@ body{
     font-size: 30px;
     transition: 0.2s;
     outline: none;
+    cursor: pointer;
 }
 .buttoncontainer{/*container of buttons*/
     width:100%;
