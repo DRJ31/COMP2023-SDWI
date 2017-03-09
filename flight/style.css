@@ -33,11 +33,6 @@ img{
     cursor: pointer;
 }
 
-.redbtn{
-    border: 1px solid red;
-    background-color: red;
-}
-
 .bluebtn{
     background-color: #3eb8eb;
     border: 1px solid #3eb8eb;
@@ -67,10 +62,6 @@ body{
     }
     .bluebtn{
         display: none;
-    }
-    .redbtn{
-        width: 90%;
-        margin-left: 5%;
     }
     .sub{
         float: right;

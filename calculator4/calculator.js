@@ -63,6 +63,7 @@ window.onload = function () {//change height of screen in phone version
     var high = document.getElementById("screen").style;
     if (width < 768) {
         var tall = screen.height - 470;
+        alert(window.height);
         high.height = tall + "px";
     }
     else {
@@ -138,7 +139,6 @@ function main(element) {//function of buttons
         var str = txt.innerHTML.split("");
         str.splice(str.length-1, 1);
         str = str.join("");
-        console.log(str);
         txt.innerHTML = str + element;
     }
     else if (txt.innerHTML.match(strjudge[0]) == null) {//only number and + - * /
