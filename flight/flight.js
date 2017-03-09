@@ -1,5 +1,5 @@
 var seat=[[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true]];
-var judge=/[^\D*\[\]]/g;//find out numbers in id
+var judge=/[^\D*\[\]]+/g;//find out numbers in id
 var result=[];//show the result
 function select(name) {
     var ref=document.getElementById(name);
@@ -35,13 +35,22 @@ function select(name) {
 
 function submitresult(){
     var msg="You have selected: ";
-    var rows=result.length;
+    var rows=seat.length;
     for(var i=0;i<rows;i++){
-            if(i==rows-1){
-                msg+=result[i][0]+result[i][1]+'.';
+        var cols=seat[i].length;
+        for(var j=0;j<cols;j++){
+            if(seat[i][j]==false){
+                document.getElementById("seat["+i+"]["+j+"]").setAttribute('src','unavailable.png');
+            }
+        }
+    }
+    var rows1=result.length;
+    for(var k=0;k<rows1;k++){
+            if(k==rows1-1){
+                msg+=result[k][0]+result[k][1]+'.';
             }
             else {
-                msg += result[i][0] + result[i][1] + ', ';
+                msg += result[k][0] + result[k][1] + ', ';
             }
     }
     alert(msg);
@@ -53,7 +62,8 @@ function resetit(){
     for(var i=0;i<rows;i++){
         var cols=seat[i].length;
         for(var j=0;j<cols;j++){
-            if(seat[i][j]==false){
+            var judge1=document.getElementById("seat["+i+"]["+j+"]").src.match(/selected/g)!=null;
+            if(judge1==true){
                 seat[i][j]=true;
                 document.getElementById("seat["+i+"]["+j+"]").setAttribute('src','available.png');
             }
