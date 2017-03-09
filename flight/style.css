@@ -28,7 +28,8 @@ img{
     height: 50px;
     border-radius: 5px;
     color: white;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
 }
 
@@ -40,4 +41,47 @@ img{
 .bluebtn{
     background-color: #3eb8eb;
     border: 1px solid #3eb8eb;
+}
+
+body{
+    margin: 0;
+}
+
+.header{
+    width: 96%;
+    background-color: #3eb8eb;
+    height: 50px;
+    font-size: 30px;
+    line-height: 45px;
+    color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.sub{
+    display: none;
+}
+@media(max-width: 799px){
+    .maincontent{
+        width: 98%;
+        margin-left: 1%;
+    }
+    .bluebtn{
+        display: none;
+    }
+    .redbtn{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .sub{
+        float: right;
+        font-size: 20px;
+        display: block;
+        line-height: 50px;
+    }
+}
+
+@media(max-width: 767px){
+    td{
+        font-size: 5px;
+    }
 }

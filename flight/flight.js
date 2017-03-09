@@ -1,6 +1,7 @@
 var seat=[[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true],[true,true,true,true,true,true]];
-var judge=/[^\D*\[\]]+/g;//find out numbers in id
+var judge=/[^\D]\d*/g;//find out numbers in id
 var result=[];//show the result
+var result1=[];//result show on alert
 function select(name) {
     var ref=document.getElementById(name);
     ref.setAttribute("src","selected.png");
@@ -31,6 +32,7 @@ function select(name) {
             ver=false;
     }
     result.push([parseInt(nums[0])+11,ver]);
+    result1.push([parseInt(nums[0])+11,ver]);
 }
 
 function submitresult(){
@@ -44,20 +46,21 @@ function submitresult(){
             }
         }
     }
-    var rows1=result.length;
+    var rows1=result1.length;
     for(var k=0;k<rows1;k++){
             if(k==rows1-1){
-                msg+=result[k][0]+result[k][1]+'.';
+                msg+=result1[k][0]+result1[k][1]+'.';
             }
             else {
-                msg += result[k][0] + result[k][1] + ', ';
+                msg += result1[k][0] + result1[k][1] + ', ';
             }
     }
     alert(msg);
+    result1=[];
 }
 
 function resetit(){
-    result=[];
+    result1=[];
     var rows=seat.length;
     for(var i=0;i<rows;i++){
         var cols=seat[i].length;
