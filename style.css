@@ -254,6 +254,20 @@ p{
     color: white;
     background-color: #78c357;
 }
+.flight{/*style of calculator button*/
+    color: yellow;
+    border: 1px solid yellow;
+}
+@media (max-width: 767px) {
+    .flight{
+        color: white;
+        background-color: yellow;
+    }
+}
+.flight:hover{
+    color: white;
+    background-color: yellow;
+}
 @media(max-width: 767px){
     .favbutton1{
         color: white;

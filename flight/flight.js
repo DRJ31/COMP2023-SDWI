@@ -2,7 +2,16 @@ var seat=[[true,true,true,true,true,true],[true,true,true,true,true,true],[true,
 var judge=/[^\D]\d*/g;//find out numbers in id
 var result=[];//show the result
 var result1=[];//result show on alert
-function select(name) {
+var wide=screen.width;
+window.onload=function () {
+    if(wide<768){
+        var element=document.getElementsByClassName('none');
+        element[0].innerHTML='';
+        element[1].innerHTML="";
+    }
+}
+
+function select(name) {//select seat function
     var ref=document.getElementById(name);
     ref.setAttribute("src","selected.png");
     var nums=name.match(judge);
@@ -35,7 +44,7 @@ function select(name) {
     result1.push([parseInt(nums[0])+11,ver]);
 }
 
-function submitresult(){
+function submitresult(){//submit function
     var msg="You have selected: ";
     var rows=seat.length;
     for(var i=0;i<rows;i++){
@@ -59,7 +68,7 @@ function submitresult(){
     result1=[];
 }
 
-function resetit(){
+function resetit(){//reset function
     result1=[];
     var rows=seat.length;
     for(var i=0;i<rows;i++){
