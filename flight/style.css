@@ -1,27 +1,27 @@
-.maincontent{
-    width:800px;
-    margin:0 auto;
+.maincontent {
+    width: 800px;
+    margin: 0 auto;
 }
 
-td{
+td {
     color: #3eb8eb;
     text-align: center;
     font-size: 25px;
 }
 
-.black{
+.black {
     color: black;
 }
 
-table{
+table {
     width: 100%;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.btn{
+.btn {
     width: 40%;
     margin-left: 30%;
     font-size: 30px;
@@ -33,16 +33,16 @@ img{
     cursor: pointer;
 }
 
-.bluebtn{
+.bluebtn {
     background-color: #3eb8eb;
     border: 1px solid #3eb8eb;
 }
 
-body{
+body {
     margin: 0;
 }
 
-.header{
+.header {
     width: 96%;
     background-color: #3eb8eb;
     height: 50px;
@@ -52,18 +52,22 @@ body{
     padding-left: 2%;
     padding-right: 2%;
 }
-.sub{
+
+.sub {
     display: none;
 }
-@media(max-width: 799px){
-    .maincontent{
+
+@media (max-width: 799px) {
+    .maincontent {
         width: 98%;
         margin-left: 1%;
     }
-    .bluebtn{
+
+    .bluebtn {
         display: none;
     }
-    .sub{
+
+    .sub {
         float: right;
         font-size: 20px;
         display: block;
@@ -71,8 +75,8 @@ body{
     }
 }
 
-@media(max-width: 767px){
-    td{
+@media (max-width: 767px) {
+    td {
         font-size: 10px;
     }
 }

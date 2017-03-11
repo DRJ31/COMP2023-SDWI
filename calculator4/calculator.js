@@ -5,9 +5,9 @@ var day = new Date();
 var hour = day.getHours();//get hour of now
 var css = document.getElementById("style");
 var theme = document.getElementById("theme");
- if (hour >= 19 || hour < 7) {//change into night mode after 7:00 PM
-   night("nightmode.css");
- }
+if (hour >= 19 || hour < 7) {//change into night mode after 7:00 PM
+    night("nightmode.css");
+}
 function changemod() {//change css while press button
     var judge = css.href.match(/nightmod/g);
     var word = document.getElementById("changemod");
@@ -134,10 +134,10 @@ function main(element) {//function of buttons
     var txt = findscreen()[0];
     var txt1 = findscreen()[1];
     var strjudge = mainjudge();
-    var judge = element == "+" || element == "-" || element == "*" || element == "/" || element==".";
-    if (txt.innerHTML.match(strjudge[2]) != null&&judge==true) {//last element is + - * /
+    var judge = element == "+" || element == "-" || element == "*" || element == "/" || element == ".";
+    if (txt.innerHTML.match(strjudge[2]) != null && judge == true) {//last element is + - * /
         var str = txt.innerHTML.split("");
-        str.splice(str.length-1, 1);
+        str.splice(str.length - 1, 1);
         str = str.join("");
         txt.innerHTML = str + element;
     }
