@@ -63,7 +63,6 @@ window.onload = function () {//change height of screen in phone version
     var high = document.getElementById("screen").style;
     if (width < 768) {
         var tall = screen.height - 470;
-        alert(window.height);
         high.height = tall + "px";
     }
     else {

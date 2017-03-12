@@ -20,7 +20,9 @@ table {
 img {
     width: 100%;
 }
-
+.photos img{
+    width: 40%;
+}
 .btn {
     width: 40%;
     margin-left: 30%;
@@ -57,6 +59,12 @@ body {
     display: none;
 }
 
+.photos{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    overflow-x: auto;
+}
 @media (max-width: 799px) {
     .maincontent {
         width: 98%;
@@ -75,8 +83,18 @@ body {
     }
 }
 
+
+
+
 @media (max-width: 767px) {
     td {
         font-size: 10px;
+    }
+    .photos{
+        width: 96%;
+        margin-left: 2%;
+    }
+    .photos img{
+        width: 40px;
     }
 }
