@@ -24,50 +24,55 @@ function select(name) {//select seat function
     }
 }
 function submitresult() {//submit function
-    var msg = "You have selected: ";
-    var rows = seat.length;
-    for (var i = 0; i < rows; i++) {
-        var cols = seat[i].length;
-        for (var j = 0; j < cols; j++) {
-            var judgement2 = document.getElementById("seat[" + i + "][" + j + "]").src.match(/selected/g) == null;//judge the src
-            if (seat[i][j] == false && judgement2 == false) {
-                document.getElementById("seat[" + i + "][" + j + "]").setAttribute('src', 'unavailable.png');
-                var ver = '';
-                switch (j) {
-                    case 0:
-                        ver = "A";
-                        break;
-                    case 1:
-                        ver = 'B';
-                        break;
-                    case 2:
-                        ver = 'C';
-                        break;
-                    case 3:
-                        ver = 'J';
-                        break;
-                    case 4:
-                        ver = 'K';
-                        break;
-                    case 5:
-                        ver = "L";
-                        break;
-                    default:
-                        ver = false;
+        var msg = "You have selected: ";
+        var rows = seat.length;
+        for (var i = 0; i < rows; i++) {
+            var cols = seat[i].length;
+            for (var j = 0; j < cols; j++) {
+                var judgement2 = document.getElementById("seat[" + i + "][" + j + "]").src.match(/selected/g) == null;//judge the src
+                if (seat[i][j] == false && judgement2 == false) {
+                    document.getElementById("seat[" + i + "][" + j + "]").setAttribute('src', 'unavailable.png');
+                    var ver = '';
+                    switch (j) {
+                        case 0:
+                            ver = "A";
+                            break;
+                        case 1:
+                            ver = 'B';
+                            break;
+                        case 2:
+                            ver = 'C';
+                            break;
+                        case 3:
+                            ver = 'J';
+                            break;
+                        case 4:
+                            ver = 'K';
+                            break;
+                        case 5:
+                            ver = "L";
+                            break;
+                        default:
+                            ver = false;
+                    }
+                    result.push([i + 11, ver]);
                 }
-                result.push([i + 11, ver]);
             }
         }
-    }
-    var rows1 = result.length;
-    for (var k = 0; k < rows1; k++) {
-        if (k == rows1 - 1) {
-            msg += result[k][0] + result[k][1] + '.';
+        var rows1 = result.length;
+        if(rows1==0){
+            alert("Please select at least one seat!");
         }
         else {
-            msg += result[k][0] + result[k][1] + ', ';
+            for (var k = 0; k < rows1; k++) {
+                if (k == rows1 - 1) {
+                    msg += result[k][0] + result[k][1] + '.';
+                }
+                else {
+                    msg += result[k][0] + result[k][1] + ', ';
+                }
+            }
+            alert(msg);
+            result = [];
         }
-    }
-    alert(msg);
-    result = [];
 }
