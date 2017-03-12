@@ -14,13 +14,13 @@ function confirm() {
     fi
   fi
 }
-if [ $choice == "p" ]
+if [[ $choice == "p" || $choice == "P" ]]
 then
   git add .
   git status
   confirm "commit"
   confirm "push"
-elif [ $choice == "c" ]
+elif [[ $choice == "c" || $choice == "C" ]]
 then
   git add .
   git status
