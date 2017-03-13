@@ -13,17 +13,31 @@ window.onbeforeunload=function(){
     return false;
 };
 function select(name) {//select seat function
-    var judgement = document.getElementById(name).src.match(/available/g) == null;//judge if the seat is selected but not confirmed
-    var judgement1 = document.getElementById(name).src.match(/unavailable/g) == null;//judge if the seat is not selected
-    var nums = name.match(judge);//find numbers in id
-    var ref = document.getElementById(name);
-    if (judgement == true) {
-        ref.setAttribute("src", "available.png");
-        seat[nums[0]][nums[1]] = true;
+    var count=0;//count how many seats you have chosen
+    for(var i=0;i<seat.length;i++){
+        for(var j=0;j<seat[i].length;j++){
+            if(document.getElementById("seat[" + i + "][" + j + "]").src.match(/selected/g)!=null){
+                count++;
+            }
+        }
     }
-    else if (judgement1 == true) {
-        ref.setAttribute("src", "selected.png");
-        seat[nums[0]][nums[1]] = false;
+    console.log(count);
+    if(count>=2&&document.getElementById(name).src.match(/selected/g)==null){
+        alert("You can only select up to 2 seats");
+    }
+    else {
+        var judgement = document.getElementById(name).src.match(/available/g) == null;//judge if the seat is selected but not confirmed
+        var judgement1 = document.getElementById(name).src.match(/unavailable/g) == null;//judge if the seat is not selected
+        var nums = name.match(judge);//find numbers in id
+        var ref = document.getElementById(name);
+        if (judgement == true) {
+            ref.setAttribute("src", "available.png");
+            seat[nums[0]][nums[1]] = true;
+        }
+        else if (judgement1 == true) {
+            ref.setAttribute("src", "selected.png");
+            seat[nums[0]][nums[1]] = false;
+        }
     }
 }
 function submitresult() {//submit function
