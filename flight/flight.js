@@ -21,7 +21,6 @@ function select(name) {//select seat function
             }
         }
     }
-    console.log(count);
     if(count>=2&&document.getElementById(name).src.match(/selected/g)==null){
         alert("You can only select up to 2 seats");
     }
