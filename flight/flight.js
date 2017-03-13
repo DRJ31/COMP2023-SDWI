@@ -9,6 +9,9 @@ window.onload = function () {//hide "window" in phone version
         element[1].innerHTML = "";
     }
 };
+window.onbeforeunload=function(){
+    return false;
+};
 function select(name) {//select seat function
     var judgement = document.getElementById(name).src.match(/available/g) == null;//judge if the seat is selected but not confirmed
     var judgement1 = document.getElementById(name).src.match(/unavailable/g) == null;//judge if the seat is not selected
