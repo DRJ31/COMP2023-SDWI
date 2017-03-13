@@ -26,3 +26,4 @@ then
   git status
   confirm "commit"
 fi
+read -p "Press Enter to exit"
