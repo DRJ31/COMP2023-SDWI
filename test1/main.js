@@ -102,6 +102,3 @@ function changecolor(num){//change border color of textarea
         element.style.borderBottom="1px solid #bbb";
     }
 }
-
-
-

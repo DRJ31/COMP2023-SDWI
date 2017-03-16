@@ -82,7 +82,7 @@ input[type="text"]{/*style of text*/
     transition: 0.2s;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1023px) {/*iPad version*/
     .imgcontainer{
         width: 25%;
     }
