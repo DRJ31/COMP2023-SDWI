@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+<!--Please Check my phone version!!!-->
 <head>
 	<meta charset="utf-8">
 	<script src="main.js"></script>
 	<link rel="stylesheet" href="style.css">
 	<title>Zodiac</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
 </head>
 <body>
 <!--information card page-->
@@ -19,45 +21,45 @@
 <div id="infocardbg"></div>
 <!--img begin-->
 <div class="imgcontainer">
-	<img src="img/zodiac-rat.png" alt="" id="p0" onclick="clickfun(0)">
+	<img src="img/zodiac-rat.png" alt="" id="p0" onclick="clickfun(0)" title="Rat">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-ox.png" alt="" id="p1" onclick="clickfun(1)">
+	<img src="img/zodiac-ox.png" alt="" id="p1" onclick="clickfun(1)" title="OX">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-tiger.png" alt="" id="p2" onclick="clickfun(2)">
+	<img src="img/zodiac-tiger.png" alt="" id="p2" onclick="clickfun(2)" title="Tiger">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-rabbit.png" alt="" id="p3" onclick="clickfun(3)">
+	<img src="img/zodiac-rabbit.png" alt="" id="p3" onclick="clickfun(3)" title="Rabbit">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-dragon.png" alt="" id="p4" onclick="clickfun(4)">
+	<img src="img/zodiac-dragon.png" alt="" id="p4" onclick="clickfun(4)" title="Dragon">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-snake.png" alt="" id="p5" onclick="clickfun(5)">
+	<img src="img/zodiac-snake.png" alt="" id="p5" onclick="clickfun(5)" title="Snake">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-horse.png" alt="" id="p6" onclick="clickfun(6)">
+	<img src="img/zodiac-horse.png" alt="" id="p6" onclick="clickfun(6)" title="Horse">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-sheep.png" alt="" id="p7" onclick="clickfun(7)">
+	<img src="img/zodiac-sheep.png" alt="" id="p7" onclick="clickfun(7)" title="Sheep">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-monkey.png" alt="" id="p8" onclick="clickfun(8)">
+	<img src="img/zodiac-monkey.png" alt="" id="p8" onclick="clickfun(8)" title="Monkey">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-rooster.png" alt="" id="p9" onclick="clickfun(9)">
+	<img src="img/zodiac-rooster.png" alt="" id="p9" onclick="clickfun(9)" title="Rooster">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-dog.png" alt="" id="p10" onclick="clickfun(10)">
+	<img src="img/zodiac-dog.png" alt="" id="p10" onclick="clickfun(10)" title="Dog">
 </div>
 <div class="imgcontainer">
-	<img src="img/zodiac-pig.png" alt="" id="p11" onclick="clickfun(11)">
+	<img src="img/zodiac-pig.png" alt="" id="p11" onclick="clickfun(11)" title="Pig">
 </div>
 <!--img end-->
 <!--submit container-->
 <div class="submit">
-	<input type="text" id="text">
+	<input type="text" id="text" onfocus="changecolor(1)" onfocusout="changecolor(0)">
 	<button class="button" onclick="submitfun()"><b>Submit</b></button>
 </div>
 </body>

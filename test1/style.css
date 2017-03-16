@@ -27,6 +27,7 @@ input[type="text"]{/*style of text*/
     border-top: none;
     outline: none;
     height: 30px;
+    transition: 0.1s;
 }
 #infocard{/*style of information card*/
     margin: auto;
@@ -50,6 +51,7 @@ input[type="text"]{/*style of text*/
     width: 300px;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 .title{/*title of information card*/
     position: absolute;
@@ -71,11 +73,27 @@ input[type="text"]{/*style of text*/
     list-style: none;
 }
 
-#infocardbg{
+#infocardbg{/*black background of info card*/
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.7);
-    z-index: 8;
-    display: none;
+    background-color: rgba(0,0,0,0);
+    z-index: -1;
+    transition: 0.2s;
+}
+
+@media (max-width: 1023px) {
+    .imgcontainer{
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {/*phone version*/
+    .imgcontainer{
+        width: 33.333%;
+    }
+    #infocard{
+        height: 100%;
+        width: 100%;
+    }
 }

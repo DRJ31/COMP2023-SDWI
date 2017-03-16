@@ -1,5 +1,4 @@
 var years=[];//array of all years
-var regexp=/[^\D]\d/g;//find numbers in a string
     for(var i=0;i<10;i++){
         years[i]=[];
         for(var j=0;j<10;j++){
@@ -72,7 +71,8 @@ function clickfun(num){//click img function
     var content='<img src='+src+' alt=""><ul>'+list+'</ul>';
     document.getElementById("info").innerHTML=content;
     document.getElementById("infocard").style.display="block";
-    document.getElementById("infocardbg").style.display="block";
+    document.getElementById("infocardbg").style.zIndex="8";
+    document.getElementById("infocardbg").style.backgroundColor="rgba(0,0,0,0.8)";
 }
 
 function submitfun(){//submit button function
@@ -87,8 +87,21 @@ function submitfun(){//submit button function
     clickfun(num);
 }
 
-function goback(){
+function goback(){//arrow button function
     document.getElementById("infocard").style.display="none";
-    document.getElementById("infocardbg").style.display="none";
+    document.getElementById("infocardbg").style.zIndex="-1";
+    document.getElementById("infocardbg").style.backgroundColor="rgba(0,0,0,0)";
 }
+
+function changecolor(num){//change border color of textarea
+    var element=document.getElementById("text");
+    if(num==1){
+        element.style.borderBottom="1px solid rgb(33,150,243)";
+    }
+    else{
+        element.style.borderBottom="1px solid #bbb";
+    }
+}
+
+
 
