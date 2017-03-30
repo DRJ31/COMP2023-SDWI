@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            margin:auto;
+            width: 60%;
+            text-align: center;
+        }
+        .books{
+            width: 80%;
+            margin:auto;
+            height: 300px;
+        }
+        img{
+            width: 60%;
+        }
+        .books img{
+            width: 25%;
+        }
+        #cart{
+            width: 50%;
+        }
+        .status{
+            height: 20px;
+        }
+    </style>
+    <script>
+        var price=[10,22,66,88];
+        var intDeleNum = 0;
+        function init()
+        {
+            var drag = document.getElementsByTagName("img");
+            for(var i = 0;i<drag.length;i++)
+            {
+                drag[i].addEventListener("dragstart",function(e){
+                    var dt = e.dataTransfer;
+                    dt.setData("text/plain",this.id);
+                },false);
+            }
+            var recy = document.getElementById("cart");
+            recy.addEventListener("drop",function(e){
+                var dt = e.dataTransfer;
+                var intval = dt.getData("text/plain");
+                Drop(intval);
+            },false);
+        }
+        document.ondragover = function(e)
+        {
+            e.preventDefault();
+        };
+        document.ondrop = function(e)
+        {
+            e.preventDefault();
+        };
+
+        function Drop(id)
+        {
+            var node = document.getElementById(id);
+            node.parentNode.removeChild(node);
+            intDeleNum+=price[parseInt(id)-1];
+            document.getElementById("status").innerHTML = intDeleNum;
+        }
+    </script>
+</head>
+<body onload="init()">
+ <div class="container">
+     <div class="books">
+         <img src="book.png" alt="" draggable="true" id="1">
+         <img src="book.png" alt="" draggable="true" id="2">
+         <img src="book.png" alt="" draggable="true" id="3">
+         <img src="book.png" alt="" draggable="true" id="4">
+     </div>
+     <img src="cart.png" alt="" id="cart">
+     <div class="status"><p id="status"></p></div>
+ </div>
+</body>
+</html>

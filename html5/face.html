@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="face.js"></script>
+    <style>
+        .main{
+            position: absolute;
+            width: 600px;
+            height: 400px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin:auto;
+            background-color: #3eb8eb;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <canvas id="face">
+        </canvas>
+    </div>
+    <script>
+        var canvas;
+        var context;
+        function init(){
+            canvas=document.getElementById("face");
+            context=canvas.getContext("2d");
+        }
+        function drawlefteye(dx,dy){
+            x=100;
+            y=100;
+            dx=dx || 0;
+            x1=x+parseFloat(dx);
+            dy=dy||0;
+            y1=y+parseFloat(dy);
+            context.beginPath();
+            context.arc(x1,y1,5,0,degreesToRadians(360),true);
+            context.fillStyle="#000";
+            context.fill();
+            context.strokeStyle='#000';
+            context.stroke();
+        }
+        function drawrighteye(dx,dy){
+            x=300;
+            y=100;
+            dx=dx || 0;
+            x1=x+parseFloat(dx);
+            dy=dy||0;
+            y1=y+parseFloat(dy);
+            context.beginPath();
+            context.arc(x1,y1,5,0,degreesToRadians(360),true);
+            context.fillStyle="#000";
+            context.fill();
+            context.strokeStyle='#000';
+            context.stroke();
+        }
+        function degreesToRadians(degrees) {
+            radians = (degrees * Math.PI)/180;
+            return radians;
+        }
+    </script>
+</body>
+</html>
