@@ -405,23 +405,17 @@ p{
     0%{
         opacity: 0;
     }
-    25%{
-        transform: matrix3d(3.153733, -0.247374, 0, -0.000473,
-        -0.467063, 2.934044, 0, -0.00031,
-        0, 0, 1, 0,
-        100, 100, 0, 1);
+    20%{
+        transform: skewX(12deg) skewY(12deg);
     }
-    50%{
-        transform: matrix3d(3.270229, 0.085009, 0, -0.000048,
-        0.217801, 3.262161, 0, 0.000478,
-        0, 0, 1, 0,
-        83, 95, 0, 1);
+    40%{
+        transform: skewX(-6deg) skewY(-6deg);
     }
-    75%{
-        transform: matrix3d(3.155963, -0.184546, 0, -0.000665,
-        -0.14373, 3.058218, 0, -0.000054,
-        0, 0, 1, 0,
-        83, 95, 0, 1);
+    60%{
+        transform: skewX(3deg) skewY(3deg);
+    }
+    80%{
+        transform: skewX(-1deg) skewY(-1deg);
     }
     100%{
         transform: none;
