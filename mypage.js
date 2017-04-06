@@ -17,3 +17,4 @@ function hidediv() {//hide wechat code
 function favpage(link){//go to my favorite webpage
         window.open(link);
 }
+

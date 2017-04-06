@@ -24,7 +24,7 @@
     <div class="headcontent clearfix">
         <!--My Picrutre and name start-->
        <div class="floatleft textcenter">
-           <img src="img/drj.jpg" style="border-radius: 50%;width: 30%" alt=""/><br/><br/><!--My photo-->
+           <img src="img/drj.jpg" style="border-radius: 50%;width: 30%" alt="" class="wow turnaround infinite" data-wow-duration="5s"/><br/><br/><!--My photo-->
            Deng Renjie <br/><br/>
            Jack <br/><br/>
            l630003010
@@ -59,12 +59,14 @@
 <!--Introduction and about begin-->
 <div id="maincontent" class="clearfix">
 <!--Introduction Part begin-->
-<div class="floatleft cardframe">
+<div class="wow floatleft cardframe rotateleft">
     <h1>Introduction of Myself</h1><!--Title-->
     <!--Introduction content begin-->
+    <div class="divide">
     <p>My name is Deng Renjie and my English name is Jack. My favorite sport is tennis. At the same time, I'm very interested in computer science.</p>
     <p>Some students in CST have learnt much about computer science, for example, Bill can master C language very well, Jack Wu can process videos very well. I have only written a small program to generate raondom student number using visual basic when I was in senior middle school. And after Senior three, I have totally forgotten visual basic.</p>
     <p>After Bill, who I have mentioned before, taught Jack Wu and Laurence Luo and I how to use github, I begin to code again. This time, I learn javascript and PHP by myself and upload my project to github.</p>
+    </div>
     <h3>What role do I want to play</h3>
     <p>In this Semester, I want to be developer and web designer of this project because I have experience in both web designing and developing. </p>
     <h3>What do I want to gain from this class</h3>
@@ -72,7 +74,7 @@
     <!--Introduction content end-->
 </div>
 <!--Introduction Part end-->
-<div class="floatright cardframe">
+<div class="wow floatright cardframe rotateright" data-wow-delay="0.2s">
     <h1>About this webpage</h1><!--title-->
     <!--list begin-->
     <ul>
@@ -82,18 +84,18 @@
     <!--list end-->
 </div>
     <!--Favourite page button-->
-    <div class="favbutton" onclick="favpage('http://ow.blizzard.cn')">
+    <div class="wow favbutton jelly" onclick="favpage('http://ow.blizzard.cn')" data-wow-delay="0.4s">
         Favourite Website 1: OverWatch
     </div>
     <!--Another Favourite page button-->
-    <div class="favbutton1" onclick="favpage('http://bilibili.com')">
+    <div class="wow favbutton1 shake" onclick="favpage('http://bilibili.com')" data-wow-delay="1s" data-wow-duration="0.8s">
         Favourite Website 2: Bilibili
     </div>
 </div>
 <!--Introduction and about end-->
 <!--timetable begin-->
-<h1 style="text-align: center">My Timetable</h1>
-<div id="tablecontent" class="textcenter">
+<h1 style="text-align: center" class="wow flowup">My Timetable</h1>
+<div id="tablecontent" class="wow textcenter flowup" data-wow-delay="0.2s">
 
 <table width="100%" cellpadding="10px" cellspacing="0">
     <!--First row-->
@@ -127,21 +129,25 @@
 </table>
 </div>
 <!--timetable end-->
-<div class="bottombutton join" onclick="window.location.href='Exercise2/'">
+<div class="wow bottombutton join flowup" onclick="window.location.href='Exercise2/'">
     Join my Company
 </div>
-<div class="bottombutton calculator" onclick="window.location.href='calculator/'">
+<div class="wow bottombutton calculator flowup" onclick="window.location.href='calculator/'">
     Calculator
 </div>
-<div class="bottombutton calculator" onclick="window.location.href='calculator4/'">
+<div class="wow bottombutton calculator flowup" onclick="window.location.href='calculator4/'">
     Week4 Calculator
 </div>
-<div class="bottombutton flight" onclick="window.location.href='flight/'">
+<div class="wow bottombutton flight flowup" onclick="window.location.href='flight/'">
     Seat Selection
 </div>
-<div id="footer" class="textcenter">
+<div id="footer" class="wow textcenter flowup">
     © Deng Renjie All Rights Reserved
 </div>
 </body>
+<script src="wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 <!--body part end-->
 </html>
