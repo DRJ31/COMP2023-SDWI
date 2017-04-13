@@ -48,7 +48,7 @@ function getid(element){
 }
 
 function mailerr(element){
-    var regexp=/^[\w\-\_\.]+\@\w{2,}\.\w{2,}/;
+    var regexp=/^[\w\-\.]+\@\w+\.\w{2,}/;
     var result=element.value.match(regexp);
     if(result!==null){
         $("#emailerr").css("color","green").html("√");
