@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乎U Sign Up</title>
+    <script src="regexp.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://ols1alctg.qnssl.com/bootstrap.min.css">
+    <script src="jquery-3.2.0.min.js"></script>
+    <style>
+        .checkbox{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span class="title">乎U</span>
+    </header>
+    <div class="card">
+        <form action="">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Please input Email Address" name="email" required onblur="mailerr(this)" onfocus="resetit('#emailerr')">
+            </div>
+            <div class="errormsg" id="emailerr"></div>
+            <div class="form-group">
+                <label for="nickname">Nickname</label>
+                <input type="text" class="form-control" id="nickname" placeholder="Please input your nickname" name="nickname" required>
+            </div>
+            <div class="errormsg" id="nicknameerr"></div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Please input password" name="password" required>
+            </div>
+            <div class="errormsg" id="passerr"></div>
+            <div class="form-group">
+                <label for="confirmpass">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmpass" placeholder="Please input your password again" required>
+            </div>
+            <div class="errormsg" id="confirmerr"></div>
+            <label>Gender</label><br/>
+            <label class="radio-inline">
+                <input type="radio" name="gender" id="male" value="male" required> Male
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" id="female" value="female" required> Female
+            </label><br/><br/>
+            <label>Birth Date</label><br/>
+            <div class="col-sm-6">
+            <select name="year" id="year" class="form-control" required>
+                <option value=""></option>
+            </select>
+            </div>
+            <div class="col-sm-3">
+            <select name="month" id="month" class="form-control" required>
+            </select>
+            </div>
+            <div class="col-sm-3">
+            <select name="day" id="day" class="form-control" required>
+                <option value=''>DD</option>
+            </select>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="checkout" id="checkout" required> I have read and agreed to the Service Agreement and the Privacy Policy
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</body>
+<script>
+    generateyear();
+    generatemonth();
+</script>
+</html>
