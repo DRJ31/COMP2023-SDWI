@@ -6,6 +6,7 @@
     <script src="regexp.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://ols1alctg.qnssl.com/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width,user-scalable=no">
     <script src="jquery-3.2.0.min.js"></script>
     <style>
         .checkbox{
@@ -19,23 +20,23 @@
     </header>
     <div class="card">
         <form action="">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Please input Email Address" name="email" required onblur="mailerr(this)" onfocus="resetit('#emailerr')">
+            <div class="form-group" id="mailgroup">
+                <label for="email" class="control-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Please input Email Address" name="email" required onblur="mailerr(this)" onfocus="resetit('#emailerr','#mailgroup')">
             </div>
             <div class="errormsg" id="emailerr"></div>
             <div class="form-group">
-                <label for="nickname">Nickname</label>
+                <label for="nickname" class="control-label">Nickname</label>
                 <input type="text" class="form-control" id="nickname" placeholder="Please input your nickname" name="nickname" required>
             </div>
             <div class="errormsg" id="nicknameerr"></div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password" class="control-label">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Please input password" name="password" required>
             </div>
             <div class="errormsg" id="passerr"></div>
             <div class="form-group">
-                <label for="confirmpass">Confirm Password</label>
+                <label for="confirmpass" class="control-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmpass" placeholder="Please input your password again" required>
             </div>
             <div class="errormsg" id="confirmerr"></div>
@@ -48,12 +49,12 @@
             </label><br/><br/>
             <label>Birth Date</label><br/>
             <div class="col-sm-6">
-            <select name="year" id="year" class="form-control" required>
+            <select name="year" id="year" class="form-control" required onchange="getyearmon(this,true);generateday(thismonth,thisyear)">
                 <option value=""></option>
             </select>
             </div>
             <div class="col-sm-3">
-            <select name="month" id="month" class="form-control" required>
+            <select name="month" id="month" class="form-control" required onchange="getyearmon(this,false);generateday(thismonth,thisyear)">
             </select>
             </div>
             <div class="col-sm-3">

@@ -21,6 +21,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 form{
     width: 400px;
@@ -33,5 +34,14 @@ form{
 .errormsg{
     height: 20px;
     font-size: 15px;
+}
+
+@media (max-width: 767px) {
+    .card{
+        width: 90%;
+    }
+    form{
+        width: 90%;
+    }
 }
 

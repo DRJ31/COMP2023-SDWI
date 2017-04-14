@@ -11,7 +11,16 @@ function generatemonth(){
         getid("month").innerHTML+="<option value='"+i+"'>"+i+"</option>";
     }
 }
-
+var thisyear=0;
+var thismonth=0;
+function getyearmon(element,judge) {
+    if(judge) {
+        thisyear = parseInt(element.value);
+    }
+    else{
+        thismonth=parseInt(element.value);
+    }
+}
 function generateday(month,year){
     var two=28;
     switch (month) {
@@ -39,6 +48,7 @@ function generateday(month,year){
 
 }
 function daylength(long){
+    getid("day").innerHTML="<option value=''>DD</option>";
     for(var i=1;i<=long;i++){
         getid("day").innerHTML+="<option value='"+i+"'>"+i+"</option>";
     }
@@ -48,16 +58,19 @@ function getid(element){
 }
 
 function mailerr(element){
-    var regexp=/^[\w\-\.]+\@\w+\.\w{2,}/;
+    var regexp=/^[\w\-\.+]+\@[\w\.\-]+\.\w{2,4}$/;
     var result=element.value.match(regexp);
     if(result!==null){
         $("#emailerr").css("color","green").html("√");
+        $("#mailgroup").addClass("has-success");
     }
     else{
         $("#emailerr").css("color","red").html("X Please check your email format");
+        $("#mailgroup").addClass("has-error").removeClass("has-success");
     }
 }
 
-function resetit(element){
+function resetit(element,id){
     $(element).html("");
+    $(id).removeClass("has-error");
 }
