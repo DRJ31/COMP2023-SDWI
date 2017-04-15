@@ -74,3 +74,29 @@ function resetit(element,id){
     $(element).html("");
     $(id).removeClass("has-error");
 }
+var password;
+function passworderr(element) {
+    password=element.value;
+    var regexp=/[a-zA-Z]+\d+/;
+    var result=element.value.match(regexp);
+    var length=element.value.length;
+    if(result!==null&&length>=8){
+        $("#passerr").css("color","green").html("√");
+        $("#passgroup").addClass("has-success");
+    }
+    else{
+        $("#passerr").css("color","red").html("X Password Should have letters and numbers and longer than 8 digits");
+        $("#passgroup").addClass("has-error").removeClass("has-success");
+    }
+}
+
+function confirmit(element){
+    if(element.value!==password){
+        $("#confirmerr").css("color","red").html("X Please check your password");
+        $("#confirmgroup").addClass("has-error").removeClass("has-success");
+    }
+    else{
+        $("#confirmerr").css("color","green").html("√");
+        $("#confirmgroup").addClass("has-success");
+    }
+}
