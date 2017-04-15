@@ -65,7 +65,7 @@ function mailerr(element){
         $("#mailgroup").addClass("has-success");
     }
     else{
-        $("#emailerr").css("color","red").html("X Please check your email format");
+        $("#emailerr").css("color","#a94442").html("X Please check your email format");
         $("#mailgroup").addClass("has-error").removeClass("has-success");
     }
 }
@@ -85,14 +85,14 @@ function passworderr(element) {
         $("#passgroup").addClass("has-success");
     }
     else{
-        $("#passerr").css("color","red").html("X Password Should have letters and numbers and longer than 8 digits");
+        $("#passerr").css("color","#a94442").html("X Password Should have letters and numbers and longer than 8 digits");
         $("#passgroup").addClass("has-error").removeClass("has-success");
     }
 }
 
 function confirmit(element){
     if(element.value!==password){
-        $("#confirmerr").css("color","red").html("X Please check your password");
+        $("#confirmerr").css("color","#a94442").html("X Please check your password");
         $("#confirmgroup").addClass("has-error").removeClass("has-success");
     }
     else{
