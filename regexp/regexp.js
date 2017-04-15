@@ -91,7 +91,7 @@ function passworderr(element) {
 }
 
 function confirmit(element){
-    if(element.value!==password){
+    if(element.value!==password||element.value.length===0){
         $("#confirmerr").css("color","#a94442").html("X Please check your password");
         $("#confirmgroup").addClass("has-error").removeClass("has-success");
     }
