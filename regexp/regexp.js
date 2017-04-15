@@ -100,3 +100,14 @@ function confirmit(element){
         $("#confirmgroup").addClass("has-success");
     }
 }
+
+function nicknamerr(element){
+    if(element.value.length!==0){
+        $("#nicknameerr").css("color","green").html("√");
+        $("#nicknamegroup").addClass("has-success");
+    }
+    else{
+        $("#nicknameerr").css("color","#a94442").html("X Please input your nickname");
+        $("#nicknamegroup").addClass("has-error").removeClass("has-success");
+    }
+}
