@@ -77,15 +77,14 @@ function resetit(element,id){
 var password;
 function passworderr(element) {
     password=element.value;
-    var regexp=/[a-zA-Z]+\d+/;
+    var regexp=/[\w\@\!\#\$\%\^\&\*]{8,}[^\s]/;
     var result=element.value.match(regexp);
-    var length=element.value.length;
-    if(result!==null&&length>=8){
+    if(result&&result[0]===password){
         $("#passerr").css("color","green").html("√");
         $("#passgroup").addClass("has-success");
     }
     else{
-        $("#passerr").css("color","#a94442").html("X Password Should have letters and numbers and longer than 8 digits");
+        $("#passerr").css("color","#a94442").html("X Password Should have letters and numbers and longer than 8 digits and no space");
         $("#passgroup").addClass("has-error").removeClass("has-success");
     }
 }
