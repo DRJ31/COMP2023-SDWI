@@ -73,6 +73,9 @@ function addminus(judge){//add or minus number of adults
         numbers++;
         $("#adultnum").val(numbers);
     }
+    else if(judge===true){
+        $("#adultnum").val(20);
+    }
     else if(numbers>1){
         numbers--;
         $("#adultnum").val(numbers);
