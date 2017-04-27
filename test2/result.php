@@ -47,7 +47,10 @@
         <tr>
             <td>Hobbies</td>
             <td><?php
-            var_dump($_POST["hobby"]);
+            foreach ($_POST["hobby"] as $value)
+            {
+                echo $value."  ";
+            }
                 ?></td>
         </tr>
     </table>

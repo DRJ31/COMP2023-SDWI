@@ -40,7 +40,7 @@ function generateday(month,year){
             daylength(30);
             break;
         default:
-            if(year%4==0){
+            if(year%4===0){
                 two=29;
             }
             daylength(two);
