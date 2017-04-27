@@ -47,6 +47,9 @@
         <tr>
             <td>Hobbies</td>
             <td><?php
+                if(!isset($_POST["hobby"])){
+                    die("You don't have a hobby.");
+                }
             foreach ($_POST["hobby"] as $value)
             {
                 echo $value."  ";
