@@ -47,7 +47,7 @@
         <tr>
             <td>Hobbies</td>
             <td><?php
-            echo $_POST["hobby"];
+            var_dump($_POST["hobby"]);
                 ?></td>
         </tr>
     </table>

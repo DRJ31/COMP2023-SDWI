@@ -1,7 +1,7 @@
 var idreg=/[0-9]+/;//regexp of id
 var namereg=/^[^\s][a-zA-Z\s]+[^\s]$/; /*regexp of name*/
 var passreg=/[a-zA-Z0-9]{6,8}/;//regexp for password
-var addreg=/^[\s][a-zA-Z0-9\s]+[^\s]$/;
+var addreg=/^[^\s][a-zA-Z0-9\s]+/;
 var phonereg=/[0-9]{11}/;//regexp for phone
 var hobbyarr=[];//array of hobby
 function resetit(element,id){//reset color of form
