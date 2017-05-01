@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Information</title>
     <link rel="stylesheet" href="https://ols1alctg.qnssl.com/bootstrap.min.css">
 </head>
 <body>

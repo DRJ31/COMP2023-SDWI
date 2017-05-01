@@ -299,6 +299,20 @@ p{
     color: white;
     background-color: darkred;
 }
+.pt2{/*style of calculator button*/
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+}
+@media (max-width: 767px) {
+    .pt2{
+        color: white;
+        background-color: dodgerblue;
+    }
+}
+.pt2:hover{
+    color: white;
+    background-color: dodgerblue;
+}
 @media(max-width: 767px){
     .favbutton1{
         color: white;
