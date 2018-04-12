@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Information</title>
-    <link rel="stylesheet" href="https://ols1alctg.qnssl.com/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.drjchn.com/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
